@@ -6,7 +6,7 @@
   <link href="http://chenzhenan.site/atom.xml" rel="self"/>
   
   <link href="http://chenzhenan.site/"/>
-  <updated>2025-07-03T07:36:29.988Z</updated>
+  <updated>2025-07-03T12:38:51.071Z</updated>
   <id>http://chenzhenan.site/</id>
   
   <author>
@@ -17,22 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://chenzhenan.site/2025/07/03/hello-world/"/>
-    <id>http://chenzhenan.site/2025/07/03/hello-world/</id>
-    <published>2025-07-03T07:37:35.848Z</published>
-    <updated>2025-07-03T07:36:29.988Z</updated>
+    <title>起源</title>
+    <link href="http://chenzhenan.site/2025/07/03/%E8%B5%B7%E6%BA%90/"/>
+    <id>http://chenzhenan.site/2025/07/03/%E8%B5%B7%E6%BA%90/</id>
+    <published>2025-07-02T16:00:00.000Z</published>
+    <updated>2025-07-03T12:38:51.071Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;起源&quot;&gt;&lt;a href=&quot;#起源&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
+    
+    <category term="杂谈" scheme="http://chenzhenan.site/categories/%E6%9D%82%E8%B0%88/"/>
     
     
   </entry>

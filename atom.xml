@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>海边</title>
+  <icon>http://chenzhenan.site/img/avatar.png</icon>
+  
+  <link href="http://chenzhenan.site/atom.xml" rel="self"/>
+  
+  <link href="http://chenzhenan.site/"/>
+  <updated>2025-07-03T07:36:29.988Z</updated>
+  <id>http://chenzhenan.site/</id>
+  
+  <author>
+    <name>沉云</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://chenzhenan.site/2025/07/03/hello-world/"/>
+    <id>http://chenzhenan.site/2025/07/03/hello-world/</id>
+    <published>2025-07-03T07:37:35.848Z</published>
+    <updated>2025-07-03T07:36:29.988Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>

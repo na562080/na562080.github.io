@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>传火祭祀场</title>
+  <title>梦</title>
   <icon>http://chenzhenan.site/img/avatar.png</icon>
-  
+  <subtitle>梦在夜中</subtitle>
   <link href="http://chenzhenan.site/atom.xml" rel="self"/>
   
   <link href="http://chenzhenan.site/"/>

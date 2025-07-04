@@ -30,8 +30,8 @@
         
     <summary type="html">&lt;!-- 音乐播放器调用 Meting（示例：歌单 ID、服务器、类型） --&gt;
 &lt;!-- 
-			&lt;script&gt;
-				console.error(&quot;Error: [hexo-tag-aplayer] Meting support is disabled, cannot</summary>
+    &lt;div id=&quot;aplayer-NVfjcxKl&quot; class=&quot;aplayer aplayer-tag-marker meting-tag-marker&quot;
+        </summary>
         
       
     

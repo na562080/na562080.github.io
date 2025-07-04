@@ -8,7 +8,7 @@
       <link href="/2025/07/03/%E8%B5%B7%E6%BA%90/"/>
       <url>/2025/07/03/%E8%B5%B7%E6%BA%90/</url>
       
-        <content type="html"><![CDATA[<!-- 音乐播放器调用 Meting（示例：歌单 ID、服务器、类型） --><!-- <script>console.error("Error: [hexo-tag-aplayer] Meting support is disabled, cannot resolve the meting tags properly.");</script> --><hr><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>以前就很羡慕别人有个人博客，虽然那时候有试过做但确实麻烦，没办法，只好宽慰自己闲的没事的才会做这个。<br>最近走在路上，想着好像这么多年来也没完成什么(其实还好，大的少)，其他的做了挺久的，但是离成型遥遥无期。突然就想起这个博客来，嗯，说做就做吧。然后就一路查资料什么报错什么文件权限不足下载这个下载那个冲突的过时的，说真的挺麻烦的，但是还是很高兴，有了自己的小网站。希望以后多留点痕迹，要不然放着太可惜了。</p>]]></content>
+        <content type="html"><![CDATA[<!-- 音乐播放器调用 Meting（示例：歌单 ID、服务器、类型） --><!--     <div id="aplayer-NVfjcxKl" class="aplayer aplayer-tag-marker meting-tag-marker"         data-id="00477GMB1Nemud" data-server="tencent" data-type="song" data-mode="circulation" data-autoplay="false" data-mutex="true" data-listmaxheight="340px" data-preload="auto" data-theme="#ad7a86"    ></div> --><hr><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>以前就很羡慕别人有个人博客，虽然那时候有试过做但确实麻烦，没办法，只好宽慰自己闲的没事的才会做这个。<br>最近走在路上，想着好像这么多年来也没完成什么(其实还好，大的少)，其他的做了挺久的，但是离成型遥遥无期。突然就想起这个博客来，嗯，说做就做吧。然后就一路查资料什么报错什么文件权限不足下载这个下载那个冲突的过时的，说真的挺麻烦的，但是还是很高兴，有了自己的小网站。希望以后多留点痕迹，要不然放着太可惜了。</p>]]></content>
       
       
       <categories>

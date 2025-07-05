@@ -64,3 +64,42 @@
 [data-theme='dark'] #footer-wrap a {
   color: var(--light-grey);
 }
+#web_bg {
+  background-image: -webkit-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: -moz-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: -o-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: -ms-linear-gradient(bottom, #fff1eb 0%, #ace0f9 100%);
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  background: #2bc0e4;
+  background: -webkit--webkit-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -webkit--moz-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -webkit--o-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -webkit--ms-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -webkit-linear-gradient(to right, #eaecc6, #2bc0e4);
+  background: -webkit-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -moz-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -o-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: -ms-linear-gradient(left, #eaecc6, #2bc0e4);
+  background: linear-gradient(to right, #eaecc6, #2bc0e4);
+}
+#aside_content .card-widget,
+#recent-posts > .recent-post-item,
+.layout_page > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post {
+  background: rgba(255,255,255,0.5);
+}
+#aside-content > .card-widget,
+#aside-content > .sticky_layout > .card-widget {
+  background: rgba(255,255,255,0.6);
+}
+.layout > #post {
+  background: rgba(255,255,255,0.6);
+}
+.layout > #page {
+  background: rgba(255,255,255,0.6);
+}
+.layout > #archive {
+  background: rgba(255,255,255,0.6);
+}

@@ -70,20 +70,20 @@
 .layout_post > #page,
 .layout_post > #post,
 .read-mode .layout_post > #post {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.95);
 }
 #aside-content > .card-widget,
 #aside-content > .sticky_layout > .card-widget {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
 }
 .layout > #post {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
 }
 .layout > #page {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
 }
 .layout > #archive {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.95);
 }
 html[data-theme='dark'] #aside_content .card-widget,
 html[data-theme='dark'] #recent-posts > .recent-post-item,
@@ -91,18 +91,18 @@ html[data-theme='dark'] .layout_page > div:first-child:not(.recent-posts),
 html[data-theme='dark'] .layout_post > #page,
 html[data-theme='dark'] .layout_post > #post,
 html[data-theme='dark'] .read-mode .layout_post > #post {
-  background: rgba(0,0,0,0.6) !important;
+  background: rgba(20,20,20,0.85) !important;
 }
 html[data-theme='dark'] #aside-content > .card-widget,
 html[data-theme='dark'] #aside-content > .sticky_layout > .card-widget {
-  background: rgba(0,0,0,0.65) !important;
+  background: rgba(25,25,25,0.85) !important;
 }
 html[data-theme='dark'] .layout > #post {
-  background: rgba(0,0,0,0.65) !important;
+  background: rgba(25,25,25,0.85) !important;
 }
 html[data-theme='dark'] .layout > #page {
-  background: rgba(0,0,0,0.65) !important;
+  background: rgba(25,25,25,0.85) !important;
 }
 html[data-theme='dark'] .layout > #archive {
-  background: rgba(0,0,0,0.65) !important;
+  background: rgba(25,25,25,0.85) !important;
 }

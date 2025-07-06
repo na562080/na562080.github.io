@@ -69,32 +69,24 @@
 .layout_page > div:first-child:not(.recent-posts),
 .layout_post > #page,
 .layout_post > #post,
-.read-mode .layout_post > #post {
-  background: rgba(255,255,255,0.8);
-}
+.read-mode .layout_post > #post,
 #aside-content > .card-widget,
-#aside-content > .sticky_layout > .card-widget {
-  background: rgba(255,255,255,0.85);
-}
+#aside-content > .sticky_layout > .card-widget,
 .layout > #post,
 .layout > #page,
 .layout > #archive {
-  background: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.8);
 }
 body[data-theme='dark'] #aside_content .card-widget,
 body[data-theme='dark'] #recent-posts > .recent-post-item,
 body[data-theme='dark'] .layout_page > div:first-child:not(.recent-posts),
 body[data-theme='dark'] .layout_post > #page,
 body[data-theme='dark'] .layout_post > #post,
-body[data-theme='dark'] .read-mode .layout_post > #post {
-  background: rgba(0,0,0,0.6);
-}
+body[data-theme='dark'] .read-mode .layout_post > #post,
 body[data-theme='dark'] #aside-content > .card-widget,
-body[data-theme='dark'] #aside-content > .sticky_layout > .card-widget {
-  background: rgba(0,0,0,0.65);
-}
+body[data-theme='dark'] #aside-content > .sticky_layout > .card-widget,
 body[data-theme='dark'] .layout > #post,
 body[data-theme='dark'] .layout > #page,
 body[data-theme='dark'] .layout > #archive {
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.6);
 }

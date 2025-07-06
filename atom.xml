@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>梦</title>
-  <icon>http://chenzhenan.site/img/avatar.jpg</icon>
+  <icon>http://chenzhenan.site/img/avatar.webp</icon>
   <subtitle>夜</subtitle>
   <link href="http://chenzhenan.site/atom.xml" rel="self"/>
   
@@ -46,7 +46,7 @@
     <link href="http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html"/>
     <id>http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</id>
     <published>2025-07-06T06:31:28.000Z</published>
-    <updated>2025-07-06T12:02:04.920Z</updated>
+    <updated>2025-07-06T12:22:11.095Z</updated>
     
     
     <summary type="html">若公式出现乱码请刷新网页😙 该文章推荐机器学习入门学习者看</summary>

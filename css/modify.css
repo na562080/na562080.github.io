@@ -91,18 +91,18 @@ html[data-theme='dark'] .layout_page > div:first-child:not(.recent-posts),
 html[data-theme='dark'] .layout_post > #page,
 html[data-theme='dark'] .layout_post > #post,
 html[data-theme='dark'] .read-mode .layout_post > #post {
-  background: rgba(20,20,20,0.75) !important;
+  background: rgba(20,20,20,0.6) !important;
 }
 html[data-theme='dark'] #aside-content > .card-widget,
 html[data-theme='dark'] #aside-content > .sticky_layout > .card-widget {
-  background: rgba(25,25,25,0.75) !important;
+  background: rgba(25,25,25,0.6) !important;
 }
 html[data-theme='dark'] .layout > #post {
-  background: rgba(25,25,25,0.75) !important;
+  background: rgba(25,25,25,0.6) !important;
 }
 html[data-theme='dark'] .layout > #page {
-  background: rgba(25,25,25,0.75) !important;
+  background: rgba(25,25,25,0.6) !important;
 }
 html[data-theme='dark'] .layout > #archive {
-  background: rgba(25,25,25,0.75) !important;
+  background: rgba(25,25,25,0.6) !important;
 }

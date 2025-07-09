@@ -6,7 +6,7 @@
   <link href="http://chenzhenan.site/atom.xml" rel="self"/>
   
   <link href="http://chenzhenan.site/"/>
-  <updated>2025-07-07T13:47:36.378Z</updated>
+  <updated>2025-07-09T08:23:13.084Z</updated>
   <id>http://chenzhenan.site/</id>
   
   <author>
@@ -17,11 +17,49 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>深度学习常用方法</title>
+    <link href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html"/>
+    <id>http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html</id>
+    <published>2025-07-09T08:14:29.000Z</published>
+    <updated>2025-07-09T08:23:13.084Z</updated>
+    
+    
+    <summary type="html">PyTorch的</summary>
+    
+    
+    
+    <category term="知识查阅" scheme="http://chenzhenan.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
+    
+    
+    <category term="深度学习" scheme="http://chenzhenan.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习基础</title>
+    <link href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html"/>
+    <id>http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html</id>
+    <published>2025-07-09T03:22:00.000Z</published>
+    <updated>2025-07-09T08:22:37.649Z</updated>
+    
+    
+    <summary type="html">该文章推荐机器学习入门学习者看</summary>
+    
+    
+    
+    <category term="学习" scheme="http://chenzhenan.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="http://chenzhenan.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基础知识</title>
     <link href="http://chenzhenan.site/2025/07/06/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html"/>
     <id>http://chenzhenan.site/2025/07/06/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86.html</id>
     <published>2025-07-06T08:21:51.000Z</published>
-    <updated>2025-07-07T13:47:36.378Z</updated>
+    <updated>2025-07-09T08:22:39.593Z</updated>
     
     
       
@@ -34,7 +72,7 @@
     
     
     
-    <category term="学习" scheme="http://chenzhenan.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="知识查阅" scheme="http://chenzhenan.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
     
     
     <category term="知识" scheme="http://chenzhenan.site/tags/%E7%9F%A5%E8%AF%86/"/>
@@ -43,10 +81,10 @@
   
   <entry>
     <title>机器学习基础</title>
-    <link href="http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html"/>
-    <id>http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.html</id>
+    <link href="http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html"/>
+    <id>http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html</id>
     <published>2025-07-06T06:31:28.000Z</published>
-    <updated>2025-07-07T13:47:38.305Z</updated>
+    <updated>2025-07-09T08:22:37.022Z</updated>
     
     
     <summary type="html">若公式出现乱码请刷新网页😙 该文章推荐机器学习入门学习者看</summary>

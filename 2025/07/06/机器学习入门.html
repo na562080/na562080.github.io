@@ -640,7 +640,40 @@
 
   btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
   window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
-})()</script></div><div class="aplayer no-destroy" data-id="9430428607" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+})()</script></div><div id="aplayer-container"></div>
+<button id="btn-bg">背景音乐</button>
+<button id="btn-alt">特殊音乐</button>
+<script>
+  const ap = new APlayer({
+    container: document.getElementById('aplayer-container'),
+    fixed: true,
+    autoplay: false,
+    audio: []
+  });
+
+  const bgPlaylistId = '9534075959'; // 背景歌单
+  const altPlaylistId = '9534314248'; // 特殊歌单
+
+  async function loadPlaylist(id) {
+    const url = `https://api.i-meto.com/meting/api?server=tencent&type=playlist&id=${id}`;
+    try {
+      const res = await fetch(url);
+      const list = await res.json();
+      ap.list.clear();
+      ap.list.add(list);
+      ap.play();
+    } catch(e) {
+      console.error('加载歌单失败', e);
+    }
+  }
+
+  document.getElementById('btn-bg').onclick = () => loadPlaylist(bgPlaylistId);
+  document.getElementById('btn-alt').onclick = () => loadPlaylist(altPlaylistId);
+
+  // 默认加载背景歌单
+  loadPlaylist(bgPlaylistId);
+</script>
+<script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
   const destroyAplayer = () => {
     if (window.aplayers) {
       for (let i = 0; i < window.aplayers.length; i++) {

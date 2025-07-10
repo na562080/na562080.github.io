@@ -7,7 +7,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://chenzhenan.site/img/avatar.webp">
 <meta property="article:published_time" content="2025-07-09T08:14:29.000Z">
-<meta property="article:modified_time" content="2025-07-09T13:13:26.171Z">
+<meta property="article:modified_time" content="2025-07-10T07:26:57.628Z">
 <meta property="article:author" content="沉云">
 <meta property="article:tag" content="深度学习">
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@
   "url": "http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html",
   "image": "http://chenzhenan.site/img/avatar.webp",
   "datePublished": "2025-07-09T08:14:29.000Z",
-  "dateModified": "2025-07-09T13:13:26.171Z",
+  "dateModified": "2025-07-10T07:26:57.628Z",
   "author": [
     {
       "@type": "Person",
@@ -160,269 +160,193 @@
   isToc: true,
   pageType: 'post'
 }</script><link rel="stylesheet" href="/css/modify.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="梦" type="application/atom+xml">
-</head><body><div id="web_bg" style="background-image: url(/img/Clifftop_Walk_At_Pourville.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/Impression_sunrise.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" alt="Logo"><span class="site-name">梦</span></a><a class="nav-page-title" href="/"><span class="site-name">深度学习常用方法</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">深度学习常用方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-09T08:14:29.000Z" title="发表于 2025-07-09 16:14:29">2025-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-09T13:13:26.171Z" title="更新于 2025-07-09 21:13:26">2025-07-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/">知识查阅</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="PyTorch-常用方法速查表"><a href="#PyTorch-常用方法速查表" class="headerlink" title="PyTorch 常用方法速查表"></a>PyTorch 常用方法速查表</h1><h2 id="1-张量（Tensor）操作"><a href="#1-张量（Tensor）操作" class="headerlink" title="1. 张量（Tensor）操作"></a>1. 张量（Tensor）操作</h2><table>
+</head><body><div id="web_bg" style="background-image: url(/img/Clifftop_Walk_At_Pourville.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">6</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/Impression_sunrise.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" alt="Logo"><span class="site-name">梦</span></a><a class="nav-page-title" href="/"><span class="site-name">深度学习常用方法</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div><div class="menus_item"><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">深度学习常用方法</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-09T08:14:29.000Z" title="发表于 2025-07-09 16:14:29">2025-07-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-10T07:26:57.628Z" title="更新于 2025-07-10 15:26:57">2025-07-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/">知识查阅</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="PyTorch-常用操作（精炼版）"><a href="#PyTorch-常用操作（精炼版）" class="headerlink" title="PyTorch 常用操作（精炼版）"></a>PyTorch 常用操作（精炼版）</h1><h2 id="1-张量基础"><a href="#1-张量基础" class="headerlink" title="1. 张量基础"></a>1. 张量基础</h2><table>
 <thead>
 <tr>
-<th>方法&#x2F;函数</th>
+<th>函数&#x2F;属性</th>
 <th>说明</th>
 <th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>torch.tensor(data)</code></td>
+<td><code>torch.tensor()</code></td>
 <td>创建张量</td>
 <td><code>x = torch.tensor([1, 2, 3])</code></td>
 </tr>
 <tr>
-<td><code>torch.arange(start, end)</code></td>
-<td>生成连续整数序列张量</td>
+<td><code>torch.zeros()</code></td>
+<td>创建全零张量</td>
+<td><code>x = torch.zeros(2, 3)</code></td>
+</tr>
+<tr>
+<td><code>torch.ones()</code></td>
+<td>创建全一张量</td>
+<td><code>x = torch.ones(3)</code></td>
+</tr>
+<tr>
+<td><code>torch.arange()</code></td>
+<td>创建整数序列</td>
 <td><code>x = torch.arange(0, 10)</code></td>
 </tr>
 <tr>
-<td><code>torch.zeros(shape)</code></td>
-<td>创建全零张量</td>
-<td><code>x = torch.zeros(3, 4)</code></td>
-</tr>
-<tr>
-<td><code>torch.ones(shape)</code></td>
-<td>创建全一张量</td>
-<td><code>x = torch.ones(2, 3)</code></td>
-</tr>
-<tr>
+<td><code>x.shape</code> &#x2F; <code>.size()</code></td>
+<td>查看形状</td>
 <td><code>x.shape</code></td>
-<td>查看张量形状</td>
-<td><code>print(x.shape)</code></td>
 </tr>
 <tr>
-<td><code>x.size()</code></td>
-<td>同上，查看形状</td>
-<td><code>print(x.size())</code></td>
+<td><code>x.view()</code> &#x2F; <code>.reshape()</code></td>
+<td>改变形状</td>
+<td><code>x.view(2, 3)</code></td>
 </tr>
 <tr>
-<td><code>x.dtype</code></td>
-<td>查看数据类型</td>
-<td><code>print(x.dtype)</code></td>
-</tr>
-<tr>
-<td><code>x.to(device)</code></td>
-<td>移动张量到设备（CPU&#x2F;GPU）</td>
-<td><code>x = x.to(&#39;cuda&#39;)</code></td>
-</tr>
-<tr>
-<td><code>x.cuda()</code></td>
-<td>移动到 GPU</td>
-<td><code>x = x.cuda()</code></td>
-</tr>
-<tr>
-<td><code>x.cpu()</code></td>
-<td>移动回 CPU</td>
-<td><code>x = x.cpu()</code></td>
-</tr>
-<tr>
-<td><code>x.numpy()</code></td>
-<td>转为 numpy 数组</td>
-<td><code>arr = x.numpy()</code></td>
-</tr>
-<tr>
-<td><code>torch.cat([x1, x2], dim)</code></td>
-<td>拼接张量</td>
-<td><code>x = torch.cat([x1, x2], dim=0)</code></td>
-</tr>
-<tr>
-<td><code>torch.stack([x1, x2], dim)</code></td>
-<td>按维度堆叠张量</td>
-<td><code>x = torch.stack([x1, x2], dim=0)</code></td>
-</tr>
-<tr>
-<td><code>x.view(shape)</code></td>
-<td>改变形状（reshape）</td>
-<td><code>x = x.view(-1, 10)</code></td>
-</tr>
-<tr>
-<td><code>x.reshape(shape)</code></td>
-<td>同上</td>
-<td><code>x = x.reshape(2, 5)</code></td>
+<td><code>x.unsqueeze()</code></td>
+<td>增加维度</td>
+<td><code>x.unsqueeze(0)</code></td>
 </tr>
 <tr>
 <td><code>x.squeeze()</code></td>
-<td>去除维度为1的维度</td>
-<td><code>x = x.squeeze()</code></td>
+<td>去除多余维度</td>
+<td><code>x.squeeze()</code></td>
 </tr>
 <tr>
-<td><code>x.unsqueeze(dim)</code></td>
-<td>增加维度</td>
-<td><code>x = x.unsqueeze(0)</code></td>
+<td><code>x.numpy()</code></td>
+<td>转为 NumPy</td>
+<td><code>x.numpy()</code></td>
 </tr>
 <tr>
-<td><code>x.detach()</code></td>
-<td>从计算图分离，转为普通张量</td>
-<td><code>y = x.detach()</code></td>
+<td><code>torch.cat()</code></td>
+<td>拼接张量</td>
+<td><code>torch.cat([a, b], dim=0)</code></td>
 </tr>
 </tbody></table>
+<hr>
 <h2 id="2-数学运算"><a href="#2-数学运算" class="headerlink" title="2. 数学运算"></a>2. 数学运算</h2><table>
 <thead>
 <tr>
-<th>方法&#x2F;函数</th>
+<th>函数</th>
 <th>说明</th>
 <th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>torch.sum(x)</code></td>
+<td><code>torch.sum()</code></td>
 <td>求和</td>
-<td><code>s = torch.sum(x)</code></td>
+<td><code>torch.sum(x)</code></td>
 </tr>
 <tr>
-<td><code>torch.mean(x)</code></td>
+<td><code>torch.mean()</code></td>
 <td>求平均</td>
-<td><code>m = torch.mean(x)</code></td>
+<td><code>torch.mean(x)</code></td>
 </tr>
 <tr>
+<td><code>torch.max()</code></td>
+<td>最大值</td>
 <td><code>torch.max(x)</code></td>
-<td>求最大值</td>
-<td><code>v, idx = torch.max(x, dim=0)</code></td>
 </tr>
 <tr>
-<td><code>torch.min(x)</code></td>
-<td>求最小值</td>
-<td><code>v, idx = torch.min(x, dim=0)</code></td>
-</tr>
-<tr>
-<td><code>torch.exp(x)</code></td>
-<td>指数</td>
-<td><code>y = torch.exp(x)</code></td>
-</tr>
-<tr>
-<td><code>torch.log(x)</code></td>
-<td>对数</td>
-<td><code>y = torch.log(x)</code></td>
-</tr>
-<tr>
-<td><code>torch.sqrt(x)</code></td>
-<td>平方根</td>
-<td><code>y = torch.sqrt(x)</code></td>
-</tr>
-<tr>
-<td><code>torch.pow(x, n)</code></td>
-<td>幂</td>
-<td><code>y = torch.pow(x, 2)</code></td>
-</tr>
-<tr>
-<td><code>torch.abs(x)</code></td>
+<td><code>torch.abs()</code></td>
 <td>绝对值</td>
-<td><code>y = torch.abs(x)</code></td>
+<td><code>torch.abs(x)</code></td>
 </tr>
 <tr>
-<td><code>torch.clamp(x, min, max)</code></td>
+<td><code>torch.clamp()</code></td>
 <td>限制范围</td>
-<td><code>y = torch.clamp(x, 0, 1)</code></td>
+<td><code>torch.clamp(x, 0, 1)</code></td>
 </tr>
 </tbody></table>
-<h2 id="3-神经网络相关"><a href="#3-神经网络相关" class="headerlink" title="3. 神经网络相关"></a>3. 神经网络相关</h2><table>
+<hr>
+<h2 id="3-线性代数（常用）"><a href="#3-线性代数（常用）" class="headerlink" title="3. 线性代数（常用）"></a>3. 线性代数（常用）</h2><table>
 <thead>
 <tr>
-<th>方法&#x2F;函数</th>
+<th>函数</th>
 <th>说明</th>
 <th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><code>torch.nn.Module</code></td>
-<td>所有模型类基类</td>
-<td><code>class MyModel(nn.Module):</code></td>
+<td><code>torch.mm()</code></td>
+<td>矩阵乘法（2D）</td>
+<td><code>torch.mm(A, B)</code></td>
 </tr>
 <tr>
-<td><code>nn.Linear(in, out)</code></td>
-<td>线性层（全连接层）</td>
-<td><code>layer = nn.Linear(10, 5)</code></td>
+<td><code>torch.matmul()</code> &#x2F; <code>@</code></td>
+<td>广播乘法</td>
+<td><code>A @ B</code></td>
 </tr>
 <tr>
-<td><code>nn.Conv2d(in, out, k)</code></td>
-<td>卷积层</td>
-<td><code>conv = nn.Conv2d(3, 16, 3)</code></td>
+<td><code>torch.transpose()</code></td>
+<td>转置</td>
+<td><code>A.transpose(0, 1)</code></td>
+</tr>
+<tr>
+<td><code>torch.linalg.inv()</code></td>
+<td>矩阵求逆</td>
+<td><code>torch.linalg.inv(A)</code></td>
+</tr>
+<tr>
+<td><code>torch.linalg.solve()</code></td>
+<td>解方程组</td>
+<td><code>torch.linalg.solve(A, b)</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2 id="4-神经网络核心"><a href="#4-神经网络核心" class="headerlink" title="4. 神经网络核心"></a>4. 神经网络核心</h2><table>
+<thead>
+<tr>
+<th>模块或函数</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>nn.Linear()</code></td>
+<td>线性层</td>
+<td><code>nn.Linear(10, 5)</code></td>
 </tr>
 <tr>
 <td><code>nn.ReLU()</code></td>
-<td>激活函数ReLU</td>
-<td><code>relu = nn.ReLU()</code></td>
-</tr>
-<tr>
-<td><code>nn.Softmax(dim)</code></td>
-<td>Softmax激活</td>
-<td><code>sm = nn.Softmax(dim=1)</code></td>
+<td>激活函数</td>
+<td><code>nn.ReLU()</code></td>
 </tr>
 <tr>
 <td><code>nn.CrossEntropyLoss()</code></td>
-<td>交叉熵损失</td>
+<td>分类损失函数</td>
 <td><code>loss_fn = nn.CrossEntropyLoss()</code></td>
 </tr>
 <tr>
-<td><code>nn.MSELoss()</code></td>
-<td>均方误差损失</td>
-<td><code>loss_fn = nn.MSELoss()</code></td>
-</tr>
-<tr>
 <td><code>optimizer.step()</code></td>
-<td>优化器执行一步参数更新</td>
+<td>优化器更新</td>
 <td><code>optimizer.step()</code></td>
-</tr>
-<tr>
-<td><code>optimizer.zero_grad()</code></td>
-<td>清零梯度</td>
-<td><code>optimizer.zero_grad()</code></td>
 </tr>
 <tr>
 <td><code>loss.backward()</code></td>
-<td>反向传播计算梯度</td>
+<td>反向传播</td>
 <td><code>loss.backward()</code></td>
 </tr>
 </tbody></table>
-<h2 id="4-GPU-和设备"><a href="#4-GPU-和设备" class="headerlink" title="4. GPU 和设备"></a>4. GPU 和设备</h2><table>
+<hr>
+<h2 id="5-GPU-操作（简化）"><a href="#5-GPU-操作（简化）" class="headerlink" title="5. GPU 操作（简化）"></a>5. GPU 操作（简化）</h2><table>
 <thead>
 <tr>
-<th>方法&#x2F;函数</th>
+<th>函数或方法</th>
 <th>说明</th>
 <th>示例</th>
 </tr>
 </thead>
 <tbody><tr>
 <td><code>torch.cuda.is_available()</code></td>
-<td>检测 CUDA 是否可用</td>
+<td>检测 GPU</td>
 <td><code>torch.cuda.is_available()</code></td>
 </tr>
 <tr>
 <td><code>x.to(&#39;cuda&#39;)</code></td>
-<td>张量移动到 GPU</td>
+<td>张量转到 GPU</td>
 <td><code>x = x.to(&#39;cuda&#39;)</code></td>
 </tr>
 <tr>
 <td><code>model.to(&#39;cuda&#39;)</code></td>
-<td>模型移动到 GPU</td>
-<td><code>model = model.to(&#39;cuda&#39;)</code></td>
-</tr>
-<tr>
-<td><code>device = torch.device(&#39;cuda&#39; if torch.cuda.is_available() else &#39;cpu&#39;)</code></td>
-<td>动态设置设备</td>
-<td><code>x = x.to(device)</code></td>
-</tr>
-</tbody></table>
-<h2 id="5-数据加载（简单示例）"><a href="#5-数据加载（简单示例）" class="headerlink" title="5. 数据加载（简单示例）"></a>5. 数据加载（简单示例）</h2><table>
-<thead>
-<tr>
-<th>方法&#x2F;函数</th>
-<th>说明</th>
-<th>示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>torch.utils.data.Dataset</code></td>
-<td>自定义数据集基类</td>
-<td><code>class MyDataset(Dataset):</code></td>
-</tr>
-<tr>
-<td><code>torch.utils.data.DataLoader</code></td>
-<td>数据加载器，批量读取数据</td>
-<td><code>loader = DataLoader(dataset, batch_size=32)</code></td>
+<td>模型转到 GPU</td>
+<td><code>model.to(&#39;cuda&#39;)</code></td>
 </tr>
 </tbody></table>
 <hr>
@@ -750,7 +674,7 @@
 <td>保存为CSV</td>
 </tr>
 </tbody></table>
-</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/na562080">沉云</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html">http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://chenzhenan.site" target="_blank">梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html" title="深度学习基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">深度学习基础</div></div><div class="info-2"><div class="info-item-1">推荐机器学习入门学习者看</div></div></div></a><a class="pagination-related" href="/2025/07/09/%E5%AF%BC%E8%88%AA/%E5%AF%BC%E8%88%AA.html" title="导航"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">导航</div></div><div class="info-2"><div class="info-item-1">本页用于快速浏览并跳转到各系列文章</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html" title="深度学习基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-09</div><div class="info-item-2">深度学习基础</div></div><div class="info-2"><div class="info-item-1">推荐机器学习入门学习者看</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PyTorch-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E9%80%9F%E6%9F%A5%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">PyTorch 常用方法速查表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%A0%E9%87%8F%EF%BC%88Tensor%EF%BC%89%E6%93%8D%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">1. 张量（Tensor）操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.</span> <span class="toc-text">2. 数学运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9B%B8%E5%85%B3"><span class="toc-number">1.3.</span> <span class="toc-text">3. 神经网络相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-GPU-%E5%92%8C%E8%AE%BE%E5%A4%87"><span class="toc-number">1.4.</span> <span class="toc-text">4. GPU 和设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E6%95%B0%E6%8D%AE%E5%8A%A0%E8%BD%BD%EF%BC%88%E7%AE%80%E5%8D%95%E7%A4%BA%E4%BE%8B%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">5. 数据加载（简单示例）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NumPy-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">NumPy 常用函数和方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Pandas 常用方法</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 沉云</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">愿你的身旁，永远有幸福的魔法相伴</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/na562080">沉云</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html">http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://chenzhenan.site" target="_blank">梦</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div><div class="post-share"><div class="social-share" data-image="/img/avatar.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html" title="深度学习基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">深度学习基础</div></div><div class="info-2"><div class="info-item-1">推荐机器学习入门学习者看</div></div></div></a><a class="pagination-related" href="/2025/07/09/%E5%AF%BC%E8%88%AA/%E5%AF%BC%E8%88%AA.html" title="导航页and一些提示"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">导航页and一些提示</div></div><div class="info-2"><div class="info-item-1">本页用于快速浏览并跳转到各系列文章</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%85%A5%E9%97%A8.html" title="深度学习基础"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-07-09</div><div class="info-item-2">深度学习基础</div></div><div class="info-2"><div class="info-item-1">推荐机器学习入门学习者看</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PyTorch-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%EF%BC%88%E7%B2%BE%E7%82%BC%E7%89%88%EF%BC%89"><span class="toc-number">1.</span> <span class="toc-text">PyTorch 常用操作（精炼版）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E5%BC%A0%E9%87%8F%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">1. 张量基础</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%95%B0%E5%AD%A6%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.</span> <span class="toc-text">2. 数学运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%EF%BC%88%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 线性代数（常用）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%A0%B8%E5%BF%83"><span class="toc-number">1.4.</span> <span class="toc-text">4. 神经网络核心</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-GPU-%E6%93%8D%E4%BD%9C%EF%BC%88%E7%AE%80%E5%8C%96%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">5. GPU 操作（简化）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#NumPy-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%92%8C%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">NumPy 常用函数和方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pandas-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Pandas 常用方法</span></a></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 沉云</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">愿你的身旁，永远有幸福的魔法相伴</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
   const loadMathjax = () => {
     if (!window.MathJax) {
       window.MathJax = {

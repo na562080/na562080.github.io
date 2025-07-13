@@ -174,10 +174,7 @@
 <h3 id="线性回归的经典假设（Gauss–Markov-假设）"><a href="#线性回归的经典假设（Gauss–Markov-假设）" class="headerlink" title="线性回归的经典假设（Gauss–Markov 假设）"></a>线性回归的经典假设（Gauss–Markov 假设）</h3><ol>
 <li><p><strong>线性性（Linearity）</strong><br>模型在参数 $\mathbf{w}$ 上是线性的：<br>$$<br>y_i &#x3D; w_0 + w_1 x_{i1} + \cdots + w_p x_{ip} + \varepsilon_i<br>$$</p>
 </li>
-<li><p><strong>独立性（Independence）</strong><br>所有误差项 $\varepsilon_i$ 相互独立。  </p>
-<blockquote>
-<p>对时间序列尤需注意，不能有自相关。</p>
-</blockquote>
+<li><p><strong>独立性（Independence）</strong><br>所有误差项 $\varepsilon_i$ 相互独立。<br>对时间序列尤需注意，不能有自相关。</p>
 </li>
 <li><p><strong>同方差性（Homoscedasticity）</strong><br>不论样本值大小、位置如何，模型预测的误差波动程度是一样的。保证模型的参数估计是最小方差无偏估计（BLUE）。所有误差项具有相同方差：<br>$$<br>\operatorname{Var}(\varepsilon_i) &#x3D; \sigma^2, \quad \forall i<br>$$</p>
 </li>
@@ -187,9 +184,7 @@
 <li><p><strong>无完全多重共线性（No Perfect Multicollinearity）</strong><br>自变量矩阵 $X$ 的列向量线性无关，即：<br>$$<br>X^\top X \text{ 可逆（即满秩）}<br>$$</p>
 </li>
 <li><p><strong>误差正态分布（Normality of Errors）</strong><br>若希望进行置信区间、$t$ 检验等统计推断，需假设误差项服从正态分布：<br>$$<br>\varepsilon_i \sim \mathcal{N}(0, \sigma^2)<br>$$</p>
-<blockquote>
 <p>注意：这不是最小二乘解存在的必要条件，但用于计算置信区间、$p$ 值等推断指标时是前提条件。</p>
-</blockquote>
 </li>
 </ol>
 <h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>由于平方误差函数中的二次方项，估计值和观测值之间较大的差异将导致更大的损失。为了度量模型在整个数据集上的质量，我们需计算在训练集 $n$ 个样本上的损失均值（也等价于求和）。<br>$$<br>L(\mathbf{w}, b) &#x3D; \frac{1}{n} \sum_{i&#x3D;1}^n l^{(i)}(\mathbf{w}, b)<br>&#x3D; \frac{1}{n} \sum_{i&#x3D;1}^n \frac{1}{2} \left( \mathbf{w}^\top \mathbf{x}^{(i)} + b - y^{(i)} \right)^2.<br>$$</p>

@@ -106,3 +106,48 @@ html[data-theme='dark'] .layout > #page {
 html[data-theme='dark'] .layout > #archive {
   background: rgba(25,25,25,0.6) !important;
 }
+.gallery {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.gallery figure {
+  width: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+.gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 6px;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease;
+  -o-transition: -o-transform 0.3s ease;
+  -ms-transition: -ms-transform 0.3s ease;
+  transition: transform 0.3s ease;
+}
+.gallery figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+.gallery figure:hover img {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}

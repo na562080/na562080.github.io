@@ -5,7 +5,7 @@ var titleTime;
 
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        document.title = '(＾▽＾)ノ 拜拜啦～';
+        document.title = '(＾▽＾)ノ ';
         clearTimeout(titleTime);
     } else {
         document.title = '♪(^∇^*) 欢迎回来！ ' + OriginTitle;

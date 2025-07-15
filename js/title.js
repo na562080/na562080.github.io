@@ -15,20 +15,3 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-
-
-function shareLink() {
-  const url = window.location.origin + window.location.pathname;
-  const text = `标题：${document.title}\n链接：${url}`;
-
-  navigator.clipboard.writeText(text).then(() => {
-    if (typeof btf !== 'undefined' && btf.snackbarShow) {
-      btf.snackbarShow('本页链接已复制到剪切板，快去分享吧~');
-    } else {
-      alert('复制成功！');
-    }
-  }).catch(err => {
-    alert('复制失败，请手动复制链接');
-    console.error(err);
-  });
-}

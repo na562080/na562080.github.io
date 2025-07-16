@@ -8,7 +8,6 @@
   const linesCount = 30;
   const pointsPerLine = 40;
   const maxRadius = 300;
-
   let lines = [];
 
   function resize() {
@@ -38,7 +37,6 @@
   function draw() {
     ctx.clearRect(0, 0, w, h);
     ctx.lineCap = 'round';
-
     lines.forEach(line => {
       line.points.forEach(pt => {
         pt.angle = (pt.angle + line.speed) % (Math.PI / 2);
@@ -51,11 +49,8 @@
         const y = center.y + Math.sin(pt.angle) * pt.radius;
         const alpha = i / line.points.length;
         ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.6})`;
-        if (i === 0) {
-          ctx.moveTo(x, y);
-        } else {
-          ctx.lineTo(x, y);
-        }
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
       }
       ctx.lineWidth = 1;
       ctx.stroke();
@@ -82,8 +77,10 @@
   }
 
   function checkThemeAndToggle() {
-    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+    const theme = document.documentElement.getAttribute('data-theme');
+    if (theme === 'dark') {
       canvas.style.display = 'block';
+      canvas.style.background = 'transparent';
       if (!animationId) start();
     } else {
       canvas.style.display = 'none';
@@ -91,23 +88,14 @@
     }
   }
 
-  window.addEventListener('resize', () => {
-    resize();
-  });
+  window.addEventListener('resize', resize);
 
-  // 监听 data-theme 属性变化
-  const observer = new MutationObserver(mutations => {
-    mutations.forEach(mutation => {
-      if (
-        mutation.type === 'attributes' &&
-        mutation.attributeName === 'data-theme'
-      ) {
-        checkThemeAndToggle();
-      }
-    });
+  // 实时监听 data-theme 属性变化
+  const observer = new MutationObserver(() => {
+    checkThemeAndToggle();
   });
-  observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 
-  // 初始化调用一次
+  // 初始执行
   checkThemeAndToggle();
 })();

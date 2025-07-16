@@ -1,29 +1,67 @@
 window.addEventListener('DOMContentLoaded', function() {
   const d = new Date();
+  const y = d.getFullYear();
   const m = d.getMonth() + 1;
   const dd = d.getDate();
-  const y = d.getFullYear();
 
-  // 使用一个键，存当天日期，避免重复弹窗
   const todayKey = `popupShown_${y}-${m}-${dd}`;
-  if (sessionStorage.getItem(todayKey) === "1") return;  // 今天已弹过
+  if (sessionStorage.getItem(todayKey) === "1") return;
 
-  // 公祭日判断
-  if (m === 9 && dd === 18) {
-    document.documentElement.style.filter = "grayscale(60%)";
-    Swal.fire(`今天是九一八事变${y - 1931}周年纪念日\n🪔勿忘国耻，振兴中华🪔`);
-    sessionStorage.setItem(todayKey, "1");
-    return;
-  }
-  if (m === 7 && dd === 7) {
-    document.documentElement.style.filter = "grayscale(60%)";
-    Swal.fire(`今天是卢沟桥事变${y - 1937}周年纪念日\n🪔勿忘国耻，振兴中华🪔`);
-    sessionStorage.setItem(todayKey, "1");
-    return;
-  }
-  // 其他类似判断...
+  const lunar = solar2lunar(y, m, dd);
+  const lm = lunar.lMonth;
+  const ld = lunar.lDay;
+  const isLeap = lunar.isLeap;
 
-  // 测试弹窗，放在最后，如果没任何其他弹窗
-  Swal.fire("测试弹窗：脚本运行正常！");
-  sessionStorage.setItem(todayKey, "1");
+  if (!isLeap) {
+    switch(`${lm}-${ld}`) {
+      case '1-1':
+        Swal.fire({
+          title: '春节快乐！',
+          html: '农历新年第一天，新的开始，祝你新春吉祥，阖家幸福！'
+        });
+        break;
+      case '1-15':
+        Swal.fire({
+          title: '元宵节快乐！',
+          html: '正月十五，赏花灯，吃汤圆，团圆美满。'
+        });
+        break;
+      case '2-2':
+        Swal.fire({
+          title: '龙抬头节气！',
+          html: '二月初二，龙抬头，春耕开始，祝福丰收！'
+        });
+        break;
+      case '5-5':
+        Swal.fire({
+          title: '端午节安康！',
+          html: '五月初五，赛龙舟，吃粽子，纪念屈原。'
+        });
+        break;
+      case '8-15':
+        Swal.fire({
+          title: '中秋节快乐！',
+          html: '八月十五，赏月吃月饼，阖家团圆。'
+        });
+        break;
+      case '12-23':
+      case '12-24':
+        Swal.fire({
+          title: '小年快乐！',
+          html: '腊月二十三/二十四，年俗清扫，辞旧迎新。'
+        });
+        break;
+      case '12-29':
+      case '12-30':
+        Swal.fire({
+          title: '除夕夜！',
+          html: '辞旧迎新，守岁祈福，迎接新年。'
+        });
+        break;
+      default:
+        // 其他日子不弹窗
+        return;
+    }
+    sessionStorage.setItem(todayKey, "1");
+  }
 });

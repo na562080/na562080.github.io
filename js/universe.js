@@ -1,97 +1,61 @@
 function dark() {
     window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
-
-    var n, e, i, h, // 宽高及画布上下文
-        t = 0.0025, // 基础速度
+    var n, e, i, h, t = .05,
         s = document.getElementById("universe"),
-        o = true,
-        a = "180,184,240", // 颜色配置，可按需改
+        o = !0,
+        a = "180,184,240",
         r = "226,225,142",
         d = "226,225,224",
         c = [];
 
     function f() {
-        n = window.innerWidth;
-        e = window.innerHeight;
-        i = Math.floor(0.216 * n); // 星轨条数，稍微改成整数
-        s.setAttribute("width", n);
-        s.setAttribute("height", e);
+        n = window.innerWidth, e = window.innerHeight, i = .216 * n, s.setAttribute("width", n), s.setAttribute("height", e)
     }
 
     function u() {
-        // 透明黑覆盖，形成拖尾
-        h.fillStyle = 'rgba(0,0,10,0.05)';
-        h.fillRect(0, 0, n, e);
-
+        h.clearRect(0, 0, n, e);
         for (var t = c.length, i = 0; i < t; i++) {
-            var line = c[i];
-            line.move();
-            line.draw();
+            var s = c[i];
+            s.move(), s.fadeIn(), s.fadeOut(), s.draw()
         }
     }
 
-    // 星轨线条类
-    function Line() {
-        this.centerX = n; // 旋转中心，右上角
-        this.centerY = 0;
-        this.points = [];
-        this.radius = 0;
-        this.speed = 0;
-        this.init = function(index) {
-            this.radius = Math.min(n, e) * 0.45 * (index / i);
-            this.speed = t + Math.random() * 0.0015;
-            this.points = [];
-            var startAngle = Math.random() * (Math.PI / 2);
-            for (var p = 0; p < 50; p++) { // 每条轨迹50个点
-                this.points.push({
-                    angle: (startAngle - p * 0.012 + Math.PI * 2) % (Math.PI / 2)
-                });
-            }
-        };
-        this.move = function() {
-            for (var p = 0; p < this.points.length; p++) {
-                this.points[p].angle = (this.points[p].angle + this.speed) % (Math.PI / 2);
-            }
-        };
-        this.draw = function() {
-            h.beginPath();
-            for (var p = 0; p < this.points.length; p++) {
-                var pt = this.points[p];
-                var x = this.centerX + Math.cos(pt.angle) * this.radius;
-                var y = this.centerY + Math.sin(pt.angle) * this.radius;
-                var alpha = (p + 1) / this.points.length * 0.8;
-                h.strokeStyle = `rgba(255,255,255,${alpha.toFixed(3)})`;
-                h.lineWidth = 1.2;
-                if (p === 0) h.moveTo(x, y);
-                else h.lineTo(x, y);
-            }
-            h.stroke();
-        };
+    function y() {
+        this.reset = function () {
+            this.giant = m(3), this.comet = !this.giant && !o && m(10), this.x = l(0, n - 10), this.y = l(0, e), this.r = l(1.1, 2.6), this.dx = l(t, 6 * t) + (this.comet + 1 - 1) * t * l(50, 120) + 2 * t, this.dy = -l(t, 6 * t) - (this.comet + 1 - 1) * t * l(50, 120), this.fadingOut = null, this.fadingIn = !0, this.opacity = 0, this.opacityTresh = l(.2, 1 - .4 * (this.comet + 1 - 1)), this.do = l(5e-4, .002) + .001 * (this.comet + 1 - 1)
+        }, this.fadeIn = function () {
+            this.fadingIn && (this.fadingIn = !(this.opacity > this.opacityTresh), this.opacity += this.do)
+        }, this.fadeOut = function () {
+            this.fadingOut && (this.fadingOut = !(this.opacity < 0), this.opacity -= this.do / 2, (this.x > n || this.y < 0) && (this.fadingOut = !1, this.reset()))
+        }, this.draw = function () {
+            if (h.beginPath(), this.giant) h.fillStyle = "rgba(" + a + "," + this.opacity + ")", h.arc(this.x, this.y, 2, 0, 2 * Math.PI, !1);
+            else if (this.comet) {
+                h.fillStyle = "rgba(" + d + "," + this.opacity + ")", h.arc(this.x, this.y, 1.5, 0, 2 * Math.PI, !1);
+                for (var t = 0; t < 30; t++) h.fillStyle = "rgba(" + d + "," + (this.opacity - this.opacity / 20 * t) + ")", h.rect(this.x - this.dx / 4 * t, this.y - this.dy / 4 * t - 2, 2, 2), h.fill()
+            } else h.fillStyle = "rgba(" + r + "," + this.opacity + ")", h.rect(this.x, this.y, this.r, this.r);
+            h.closePath(), h.fill()
+        }, this.move = function () {
+            this.x += this.dx, this.y += this.dy, !1 === this.fadingOut && this.reset(), (this.x > n - n / 4 || this.y < 0) && (this.fadingOut = !0)
+        }, setTimeout(function () {
+            o = !1
+        }, 50)
     }
 
-    f();
+    function m(t) {
+        return Math.floor(1e3 * Math.random()) + 1 < 10 * t
+    }
 
-    window.addEventListener("resize", f, false);
-
-    (function init() {
-        h = s.getContext("2d");
-        c = [];
-        for (var idx = 0; idx < i; idx++) {
-            var line = new Line();
-            line.init(idx);
-            c.push(line);
-        }
-        u();
-    })();
-
-    (function animate() {
-        if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            u();
-        } else {
-            h.clearRect(0, 0, n, e);
-        }
-        window.requestAnimationFrame(animate);
-    })();
-}
-
-dark();
+    function l(t, i) {
+        return Math.random() * (i - t) + t
+    }
+    f(), window.addEventListener("resize", f, !1),
+        function () {
+            h = s.getContext("2d");
+            for (var t = 0; t < i; t++) c[t] = new y, c[t].reset();
+            u()
+        }(),
+        function t() {
+            document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark' && u(), window.requestAnimationFrame(t)
+        }()
+};
+dark()

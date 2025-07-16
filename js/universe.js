@@ -1,101 +1,61 @@
-(() => {
-  const canvas = document.getElementById('universe');
-  const ctx = canvas.getContext('2d');
-  let w, h;
-  const center = { x: 0, y: 0 };
-  let animationId;
+function dark() {
+    window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+    var n, e, i, h, t = .05,
+        s = document.getElementById("universe"),
+        o = !0,
+        a = "180,184,240",
+        r = "226,225,142",
+        d = "226,225,224",
+        c = [];
 
-  const linesCount = 30;
-  const pointsPerLine = 40;
-  const maxRadius = 300;
-  let lines = [];
-
-  function resize() {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-    center.x = w;
-    center.y = 0;
-  }
-
-  function initLines() {
-    lines = [];
-    for (let i = 0; i < linesCount; i++) {
-      const radius = maxRadius * (i / linesCount);
-      const speed = 0.002 + Math.random() * 0.001;
-      let startAngle = Math.random() * Math.PI / 2;
-      let points = [];
-      for (let p = 0; p < pointsPerLine; p++) {
-        points.push({
-          angle: (startAngle - p * 0.01 + Math.PI * 2) % (Math.PI / 2),
-          radius,
-        });
-      }
-      lines.push({ points, radius, speed });
+    function f() {
+        n = window.innerWidth, e = window.innerHeight, i = .216 * n, s.setAttribute("width", n), s.setAttribute("height", e)
     }
-  }
 
-  function draw() {
-    ctx.clearRect(0, 0, w, h);
-    ctx.lineCap = 'round';
-    lines.forEach(line => {
-      line.points.forEach(pt => {
-        pt.angle = (pt.angle + line.speed) % (Math.PI / 2);
-      });
-
-      ctx.beginPath();
-      for (let i = 0; i < line.points.length; i++) {
-        const pt = line.points[i];
-        const x = center.x + Math.cos(pt.angle) * pt.radius;
-        const y = center.y + Math.sin(pt.angle) * pt.radius;
-        const alpha = i / line.points.length;
-        ctx.strokeStyle = `rgba(255, 255, 255, ${alpha * 0.6})`;
-        if (i === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-  }
-
-  function animate() {
-    draw();
-    animationId = requestAnimationFrame(animate);
-  }
-
-  function start() {
-    resize();
-    initLines();
-    animate();
-  }
-
-  function stop() {
-    if (animationId) {
-      cancelAnimationFrame(animationId);
-      animationId = null;
+    function u() {
+        h.clearRect(0, 0, n, e);
+        for (var t = c.length, i = 0; i < t; i++) {
+            var s = c[i];
+            s.move(), s.fadeIn(), s.fadeOut(), s.draw()
+        }
     }
-    ctx.clearRect(0, 0, w, h);
-  }
 
-  function checkThemeAndToggle() {
-    const theme = document.documentElement.getAttribute('data-theme');
-    if (theme === 'dark') {
-      canvas.style.display = 'block';
-      canvas.style.background = 'transparent';
-      if (!animationId) start();
-    } else {
-      canvas.style.display = 'none';
-      stop();
+    function y() {
+        this.reset = function () {
+            this.giant = m(3), this.comet = !this.giant && !o && m(10), this.x = l(0, n - 10), this.y = l(0, e), this.r = l(1.1, 2.6), this.dx = l(t, 6 * t) + (this.comet + 1 - 1) * t * l(50, 120) + 2 * t, this.dy = -l(t, 6 * t) - (this.comet + 1 - 1) * t * l(50, 120), this.fadingOut = null, this.fadingIn = !0, this.opacity = 0, this.opacityTresh = l(.2, 1 - .4 * (this.comet + 1 - 1)), this.do = l(5e-4, .002) + .001 * (this.comet + 1 - 1)
+        }, this.fadeIn = function () {
+            this.fadingIn && (this.fadingIn = !(this.opacity > this.opacityTresh), this.opacity += this.do)
+        }, this.fadeOut = function () {
+            this.fadingOut && (this.fadingOut = !(this.opacity < 0), this.opacity -= this.do / 2, (this.x > n || this.y < 0) && (this.fadingOut = !1, this.reset()))
+        }, this.draw = function () {
+            if (h.beginPath(), this.giant) h.fillStyle = "rgba(" + a + "," + this.opacity + ")", h.arc(this.x, this.y, 2, 0, 2 * Math.PI, !1);
+            else if (this.comet) {
+                h.fillStyle = "rgba(" + d + "," + this.opacity + ")", h.arc(this.x, this.y, 1.5, 0, 2 * Math.PI, !1);
+                for (var t = 0; t < 30; t++) h.fillStyle = "rgba(" + d + "," + (this.opacity - this.opacity / 20 * t) + ")", h.rect(this.x - this.dx / 4 * t, this.y - this.dy / 4 * t - 2, 2, 2), h.fill()
+            } else h.fillStyle = "rgba(" + r + "," + this.opacity + ")", h.rect(this.x, this.y, this.r, this.r);
+            h.closePath(), h.fill()
+        }, this.move = function () {
+            this.x += this.dx, this.y += this.dy, !1 === this.fadingOut && this.reset(), (this.x > n - n / 4 || this.y < 0) && (this.fadingOut = !0)
+        }, setTimeout(function () {
+            o = !1
+        }, 50)
     }
-  }
 
-  window.addEventListener('resize', resize);
+    function m(t) {
+        return Math.floor(1e3 * Math.random()) + 1 < 10 * t
+    }
 
-  // 实时监听 data-theme 属性变化
-  const observer = new MutationObserver(() => {
-    checkThemeAndToggle();
-  });
-  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
-  // 初始执行
-  checkThemeAndToggle();
-})();
+    function l(t, i) {
+        return Math.random() * (i - t) + t
+    }
+    f(), window.addEventListener("resize", f, !1),
+        function () {
+            h = s.getContext("2d");
+            for (var t = 0; t < i; t++) c[t] = new y, c[t].reset();
+            u()
+        }(),
+        function t() {
+            document.getElementsByTagName('html')[0].getAttribute('data-theme') == 'dark' && u(), window.requestAnimationFrame(t)
+        }()
+};
+dark()

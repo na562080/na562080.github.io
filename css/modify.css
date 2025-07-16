@@ -123,4 +123,5 @@ html[data-theme='dark'] .layout > #archive {
   height: 100%;
   pointer-events: none;
   z-index: -1;
+  background: transparent !important;
 }

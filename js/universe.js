@@ -1,8 +1,8 @@
 (() => {
   const canvas = document.getElementById('universe');
   const ctx = canvas.getContext('2d');
-  let stars = [];
   let w, h;
+  let stars = [];
   let animationId = null;
 
   function resize() {
@@ -15,20 +15,27 @@
       this.reset();
     }
     reset() {
-      this.angle = Math.random() * 2 * Math.PI;
-      this.radius = Math.random() * (w / 2);
+      // 角度从0到PI，做半圆
+      this.angle = Math.random() * Math.PI;
+      this.radius = Math.random() * (Math.min(w, h) / 2);
       this.size = Math.random() * 1.5 + 0.5;
-      this.speed = Math.random() * 0.001 + 0.0005;
-      this.alpha = Math.random() * 0.5 + 0.3;
+      // 速度非常慢，负数或正数决定旋转方向
+      this.speed = (Math.random() * 0.0003 + 0.0001) * (Math.random() > 0.5 ? 1 : -1);
+      this.alpha = Math.random() * 0.5 + 0.5;
       this.color = `rgba(255, 255, 255, ${this.alpha})`;
     }
     update() {
       this.angle += this.speed;
-      if (this.radius < 0.5 || this.radius > w / 2) this.reset();
+      // 保持角度在0~2PI范围内
+      if (this.angle > 2 * Math.PI) this.angle -= 2 * Math.PI;
+      if (this.angle < 0) this.angle += 2 * Math.PI;
     }
     draw() {
-      const x = w / 2 + Math.cos(this.angle) * this.radius;
-      const y = h / 2 + Math.sin(this.angle) * this.radius;
+      // 中心点为画布底部中心（极点在下方）
+      const centerX = w / 2;
+      const centerY = h;
+      const x = centerX + Math.cos(this.angle) * this.radius;
+      const y = centerY + Math.sin(this.angle) * this.radius;
       ctx.beginPath();
       ctx.arc(x, y, this.size, 0, 2 * Math.PI);
       ctx.fillStyle = this.color;
@@ -38,24 +45,30 @@
 
   function initStars() {
     stars = [];
-    for (let i = 0; i < 800; i++) {
+    for (let i = 0; i < 500; i++) {
       stars.push(new Star());
     }
   }
 
   function animate() {
-    ctx.fillStyle = "rgba(0, 0, 10, 0.2)";
+    // 半透明黑色覆盖，长曝光拖尾
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
     ctx.fillRect(0, 0, w, h);
+
     stars.forEach(star => {
       star.update();
       star.draw();
     });
+
     animationId = requestAnimationFrame(animate);
   }
 
   function start() {
     resize();
     initStars();
+    // 先用纯黑色清屏
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, w, h);
     animate();
   }
 
@@ -81,9 +94,7 @@
     resize();
   });
 
-  // 初始判断并启动或隐藏
   checkThemeAndToggle();
 
-  // 监听主题变化
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', checkThemeAndToggle);
 })();

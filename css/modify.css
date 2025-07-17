@@ -106,8 +106,197 @@ html[data-theme='dark'] .layout > #page {
 html[data-theme='dark'] .layout > #archive {
   background: rgba(25,25,25,0.6) !important;
 }
-#recent-posts > .recent-post-item {
-  backdrop-filter: blur(6px);
+#recent-posts .recent-post-item {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  border: 1px solid rgba(0,0,0,0.07);
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+  border-radius: 6px;
+  padding: 12px;
+  -webkit-transition: -webkit-transform 0.3s ease, box-shadow 0.3s ease;
+  -moz-transition: -moz-transform 0.3s ease, box-shadow 0.3s ease;
+  -o-transition: -o-transform 0.3s ease, box-shadow 0.3s ease;
+  -ms-transition: -ms-transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+html[data-theme='dark'] #recent-posts .recent-post-item {
+  background: rgba(30,30,30,0.85);
+  border: 1px solid rgba(255,255,255,0.1);
+  -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.12);
+  box-shadow: 0 1px 5px rgba(0,0,0,0.12);
+  color: #ddd;
+}
+.bangumi-cards {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  gap: 20px;
+  -webkit-box-pack: start;
+  -moz-box-pack: start;
+  -o-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.bangumi-cards .card {
+  width: 180px;
+  border-radius: 10px;
+  padding: 14px;
+  background: -webkit-linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+  background: -moz-linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+  background: -o-linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+  background: -ms-linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+  background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15));
+  border: 1px solid rgba(255,255,255,0.2);
+  -webkit-box-shadow: inset 0 1px 2px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.bangumi-cards .card transition {
+  -webkit-transform: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -moz-transform: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transform: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -ms-transform: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-box-shadow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bangumi-cards .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: -webkit-linear-gradient(315deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  background: -moz-linear-gradient(315deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  background: -o-linear-gradient(315deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  background: -ms-linear-gradient(315deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 100%);
+  pointer-events: none;
+  -webkit-transform: translateX(-100%) translateY(-20%);
+  -moz-transform: translateX(-100%) translateY(-20%);
+  -o-transform: translateX(-100%) translateY(-20%);
+  -ms-transform: translateX(-100%) translateY(-20%);
+  transform: translateX(-100%) translateY(-20%);
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  -moz-transition: -moz-transform 0.7s ease-in-out;
+  -o-transition: -o-transform 0.7s ease-in-out;
+  -ms-transition: -ms-transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+}
+.bangumi-cards .card:hover::before {
+  -webkit-transform: translateX(100%) translateY(-20%);
+  -moz-transform: translateX(100%) translateY(-20%);
+  -o-transform: translateX(100%) translateY(-20%);
+  -ms-transform: translateX(100%) translateY(-20%);
+  transform: translateX(100%) translateY(-20%);
+}
+.bangumi-cards .card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.bangumi-cards .card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.03em;
+}
+.bangumi-cards .card h3 a {
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.bangumi-cards .card h3 a:hover {
+  color: #3a8ee6;
+  text-decoration: underline;
+}
+.bangumi-cards .card p {
+  margin: 6px 0;
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.4;
+}
+.bangumi-cards .card:hover {
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  -webkit-box-shadow: inset 0 2px 6px rgba(255,255,255,0.7), 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: inset 0 2px 6px rgba(255,255,255,0.7), 0 8px 24px rgba(0,0,0,0.18);
+}
+@media screen and (max-width: 768px) {
+  .bangumi-cards .card {
+    width: 100%;
+  }
+}
+html[data-theme='dark'] .bangumi-cards .card {
+  background: -webkit-linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25));
+  background: -moz-linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25));
+  background: -o-linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25));
+  background: -ms-linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25));
+  background: linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25));
+  border: 1px solid rgba(255,255,255,0.15);
+  -webkit-box-shadow: inset 0 1px 2px rgba(255,255,255,0.15), 0 6px 18px rgba(0,0,0,0.6);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.15), 0 6px 18px rgba(0,0,0,0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  color: #ddd;
+}
+html[data-theme='dark'] .bangumi-cards .card h3 {
+  color: #eee;
+}
+html[data-theme='dark'] .bangumi-cards .card p {
+  color: #bbb;
+}
+html[data-theme='dark'] .bangumi-cards .card a {
+  color: #aaa;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  -ms-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+html[data-theme='dark'] .bangumi-cards .card a:hover {
+  color: #7abaff;
 }
 /* 背景宇宙星光 */
 #universe {

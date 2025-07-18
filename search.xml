@@ -3,6 +3,19 @@
   
   
     
+    <entry>
+      <title>更新记录</title>
+      <link href="/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html"/>
+      <url>/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div class="timeline "><div class='timeline-item headline'>        <div class='timeline-item-title'>          <div class='item-circle'><p>2025</p></div>        </div>      </div><div class='timeline-item'>        <div class='timeline-item-title'>          <div class='item-circle'><p>07-18</p></div>        </div>        <div class='timeline-item-content'><p>目前实现的功能:<br>1.主题一图流并且透明化背景（有些教程老的class不对调半天）<br>2.夜间星空（其实我想要那种星轨转动的，但是多次尝试最终失败）<br>3.新标签页的响应（小巧还挺好玩的）<br>4.各种官方外挂标签的学习（aplayer一开始没找到问ai查攻略竟然瞎编给我该半天最后才发现不对劲）<br>5.不同页面可以使用不同背景图（挺好的可以视觉效果很漂亮，但是学习类型文章还是保持统一风格，日常写的少用的还不多）<br>6.过滤器渲染文章而不在主页，归档，搜索里被发现（说明我可以隐藏文章，虽然有心人可以爬虫获取但是本来也不是防那些人的而且也防不住，一般人找不到还是得和我要链接的）<br>7.双评论，（最开始不打算加评论，后来觉得不好加了个GitHub登的giscus，但是想着方便交流毕竟不是所有人有这个账号，虽然没人但是预设有人会看我博客吧，然后就搞Waline又半天）<br>8.多图床保障（这个没什么说的，本地存图到底太大都迁移出去了）</p><details class="toggle" style="border: 1px solid rgba(255"><summary class="toggle-button" style="background-color: rgba(255;color:  255">感想</summary><div class="toggle-content"><p>自2025-7-3以来也是多次对这个博客修改，也是走了很多弯路，明明想着内容为导向却一看美化就忍不住去试试<br>一路也是报错过时的很多，回退得吐了<br>不过不管怎么样起码现在还是很满意了，其他的做不来，太麻烦了<br>今日就作为第一次正式更新吧，算迈入正轨了，以后要以创作为主而不是美化了，想得太多反而失去的更多<br>他们那些足迹页友链圈朋友圈瀑布流短评藏宝阁什么的我看了是很馋的，好看，但是一方面改的太多了容易报错改起来真的太累了一方面还是想着内容为主本心还是想要创作的不能光美化了太不好，真的美化之路无止境啊！！<br>别说这么多了，其实我很满足了</p></div></details></div>      </div></div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
     
     
     <entry>
@@ -79,7 +92,7 @@
       <link href="/2025/07/09/%E5%AF%BC%E8%88%AA.html"/>
       <url>/2025/07/09/%E5%AF%BC%E8%88%AA.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>有问题欢迎交流讨论，懒得搞配置选了giscus作评论区<br>主要还是个人博客，什么都写，但是还是希望至少看上去专业点<br>学习文章请自加分辨对错，不确定的或个人看法明显处有标记，只能说尽量保证正确<br>机器学习</p></blockquote><ol class="series-items"><li><a href="/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html" title="机器学习基础">机器学习基础</a></li></ol><p>深度学习系列</p><ol class="series-items"><li><a href="/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html" title="深度学习基础（编写ing）">深度学习基础（编写ing）</a></li><li><a href="/2025/07/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E8%AE%A1%E7%AE%97%E6%9C%BA.html" title="计算机基础知识">计算机基础知识</a></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote><p>有问题欢迎交流讨论<br>主要还是个人博客，什么都写，但是还是希望至少看上去专业点<br>学习文章请自加分辨对错，不确定的或个人看法明显处有标记，只能说尽量保证正确<br>机器学习</p></blockquote><p>深度学习系列</p>]]></content>
       
       
       
@@ -192,7 +205,7 @@
       <link href="/2025/07/03/%E8%B5%B7%E6%BA%90.html"/>
       <url>/2025/07/03/%E8%B5%B7%E6%BA%90.html</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>以前看见别人个人博客，很漂亮，也想做一个，虽然那时候有试过，但确实麻烦做不来，没办法，只好宽慰自己闲的没事的才会做这个。<br>最近走在路上，想着好像这么多年来也没完成什么(其实还好，大的少)，其他的做了挺久的，但是离成型还是遥遥无期。突然就想起这个博客来，嗯，说做就做吧。然后就一路查资料什么报错什么文件权限不足下载这个下载那个冲突的过时的，真的挺麻烦的，但是还是很高兴，有了自己的网站。希望以后多写点，要不然放着太可惜了。</p><div class="timeline "><div class='timeline-item headline'>        <div class='timeline-item-title'>          <div class='item-circle'><p>2025</p></div>        </div>      </div><div class='timeline-item'>        <div class='timeline-item-title'>          <div class='item-circle'><p>07-18</p></div>        </div>        <div class='timeline-item-content'><p>自2025-7-3以来也是多次对这个博客修改，也是走了很多弯路，明明想着内容为导向却一看美化就忍不住去试试<br>一路也是报错过时的很多，回退得吐了<br>不过不管怎么样起码现在还是很满意了，其他的做不来，太麻烦了<br>今日就作为第一次正式更新吧，算迈入正轨了，以后要以创作为主而不是美化了，想得太多反而失去的更多</p></div>      </div></div>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h1><p>以前看见别人个人博客，很漂亮，也想做一个，虽然那时候有试过，但确实麻烦做不来，没办法，只好宽慰自己闲的没事的才会做这个。<br>最近走在路上，想着好像这么多年来也没完成什么(其实还好，大的少)，其他的做了挺久的，但是离成型还是遥遥无期。突然就想起这个博客来，嗯，说做就做吧。然后就一路查资料什么报错什么文件权限不足下载这个下载那个冲突的过时的，真的挺麻烦的，但是还是很高兴，有了自己的网站。希望以后多写点，要不然放着太可惜了。</p>]]></content>
       
       
       <categories>

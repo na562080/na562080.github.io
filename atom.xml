@@ -6,7 +6,7 @@
   <link href="http://chenzhenan.site/atom.xml" rel="self"/>
   
   <link href="http://chenzhenan.site/"/>
-  <updated>2025-07-19T13:09:45.360Z</updated>
+  <updated>2025-07-20T06:14:23.955Z</updated>
   <id>http://chenzhenan.site/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>gal追忆</title>
-    <link href="http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html"/>
-    <id>http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html</id>
-    <published>2025-07-19T13:04:00.000Z</published>
-    <updated>2025-07-19T13:09:45.360Z</updated>
+    <title>归途</title>
+    <link href="http://chenzhenan.site/2025/07/20/%E5%BD%92%E9%80%94.html"/>
+    <id>http://chenzhenan.site/2025/07/20/%E5%BD%92%E9%80%94.html</id>
+    <published>2025-07-20T06:02:11.000Z</published>
+    <updated>2025-07-20T06:14:23.955Z</updated>
     
     
     <summary type="html">出入需令(密码)</summary>
@@ -29,17 +29,19 @@
     
     
     
+    <category term="归途" scheme="http://chenzhenan.site/tags/%E5%BD%92%E9%80%94/"/>
+    
   </entry>
   
   <entry>
-    <title>更新记录</title>
-    <link href="http://chenzhenan.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html"/>
-    <id>http://chenzhenan.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</id>
-    <published>2025-07-18T15:21:01.000Z</published>
-    <updated>2025-07-19T13:44:52.789Z</updated>
+    <title>gal追忆</title>
+    <link href="http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html"/>
+    <id>http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html</id>
+    <published>2025-07-19T13:04:00.000Z</published>
+    <updated>2025-07-19T13:04:00.000Z</updated>
     
     
-    <summary type="html">一些更新记录</summary>
+    <summary type="html">出入需令(密码)</summary>
     
     
     
@@ -129,7 +131,7 @@
     <link href="http://chenzhenan.site/2025/07/09/%E5%AF%BC%E8%88%AA.html"/>
     <id>http://chenzhenan.site/2025/07/09/%E5%AF%BC%E8%88%AA.html</id>
     <published>2025-07-09T12:55:35.000Z</published>
-    <updated>2025-07-19T13:52:17.215Z</updated>
+    <updated>2025-07-20T06:04:27.365Z</updated>
     
     
     <summary type="html">快速跳转到各系列文章</summary>

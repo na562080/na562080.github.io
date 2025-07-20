@@ -1,0 +1,9 @@
+extends includes/layout.pug
+
+block content
+  include ./includes/mixins/article-sort.pug
+  - var visiblePosts = page.posts.filter(function(post) { return post.hide !== true })
+  #archive
+    .article-sort-title= `${_p('page.articles')} - ${visiblePosts.length}`
+    +articleSort(visiblePosts)
+    include includes/pagination.pug

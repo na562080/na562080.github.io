@@ -1,0 +1,243 @@
+@import 'nib'
+
+// 顶部图
+#page-header
+  background: transparent !important
+
+  &.post-bg, &.not-home-page
+    height: 420px !important
+  #post-info
+    bottom: 40px !important
+    text-align: center
+  #page-site-info
+    top: 140px !important
+
+  @media screen and (max-width: 768px)
+    &.not-home-page
+      height: 200px !important
+    #post-info
+      bottom: 10px !important
+    #page-site-info
+      top: 100px !important
+
+.top-img
+  height: 250px
+  margin: -50px -40px 50px
+  border-top-left-radius: inherit
+  border-top-right-radius: inherit
+  background-position: center
+  background-size: cover
+  transition: all .3s
+
+  @media screen and (max-width: 768px)
+    height: 230px
+    margin: -36px -14px 36px
+
+  [data-theme='dark'] &
+    filter: brightness(.8)
+
+// 页脚
+#footer:before
+  background-color: alpha(#FFF, .5)
+
+  [data-theme='dark'] &
+    background-color: alpha(#000, .5)
+
+#footer-wrap, #footer-wrap a
+  color: #111
+  transition: unset
+
+  [data-theme='dark'] &
+    color: var(--light-grey)
+
+// 白天模式背景
+#aside_content .card-widget,
+#recent-posts > .recent-post-item,
+.layout_page > div:first-child:not(.recent-posts),
+.layout_post > #page,
+.layout_post > #post,
+.read-mode .layout_post > #post
+  background rgba(255, 255, 255, 0.65)
+
+#aside-content > .card-widget,
+#aside-content > .sticky_layout > .card-widget
+  background rgba(255, 255, 255, 0.8)
+
+.layout > #post
+  background rgba(255, 255, 255, 0.8)
+
+.layout > #page
+  background rgba(255, 255, 255, 0.8)
+
+.layout > #archive
+  background rgba(255, 255, 255, 0.8)
+
+// 夜间模式背景，稍微减淡一点黑色半透明，增加视觉舒适度
+html[data-theme='dark']
+  #aside_content .card-widget,
+  #recent-posts > .recent-post-item,
+  .layout_page > div:first-child:not(.recent-posts),
+  .layout_post > #page,
+  .layout_post > #post,
+  .read-mode .layout_post > #post
+    background: rgba(20, 20, 20, 0.6) !important
+
+  #aside-content > .card-widget,
+  #aside-content > .sticky_layout > .card-widget
+    background: rgba(25, 25, 25, 0.6) !important
+
+  .layout > #post
+    background: rgba(25, 25, 25, 0.6) !important
+
+  .layout > #page
+    background: rgba(25, 25, 25, 0.6) !important
+
+  .layout > #archive
+    background: rgba(25, 25, 25, 0.6) !important
+
+// 主页卡片轻微磨砂、轻微透明，避免过透
+#recent-posts .recent-post-item
+  background rgba(255, 255, 255, 0.85)
+  backdrop-filter blur(3px)
+  -webkit-backdrop-filter blur(3px)
+  border 1px solid rgba(0, 0, 0, 0.07)
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.07)
+  border-radius 6px
+  padding 12px
+  transition transform 0.3s ease, box-shadow 0.3s ease
+  cursor pointer
+
+
+// 夜间模式下主页卡片对应透明及阴影调整
+html[data-theme='dark'] #recent-posts .recent-post-item
+  background rgba(30, 30, 30, 0.85)
+  border 1px solid rgba(255, 255, 255, 0.1)
+  box-shadow 0 1px 5px rgba(0, 0, 0, 0.12)
+  color #ddd
+
+
+
+
+// 你之前的 bangumi-cards 样式，微调和美化
+.bangumi-cards
+  display flex
+  flex-wrap wrap
+  gap 20px
+  justify-content flex-start
+  padding 10px
+
+  .card
+    width 180px
+    border-radius 10px
+    padding 14px
+    background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.15))
+    border: 1px solid rgba(255, 255, 255, 0.2)
+    box-shadow:
+      inset 0 1px 2px rgba(255,255,255,0.6),
+      0 4px 12px rgba(0,0,0,0.08)
+    backdrop-filter blur(12px)
+    -webkit-backdrop-filter blur(12px)
+    cursor pointer
+    display flex
+    flex-direction column
+    transition
+      transform 0.4s cubic-bezier(0.4,0,0.2,1)
+      box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)
+
+    position relative
+    overflow hidden
+
+    &::before
+      content ''
+      position absolute
+      top 0
+      left 0
+      width 100%
+      height 40%
+      background: linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 100%)
+      pointer-events none
+      transform translateX(-100%) translateY(-20%)
+      transition transform 0.7s ease-in-out
+
+    &:hover::before
+      transform translateX(100%) translateY(-20%)
+
+    img
+      width 100%
+      border-radius 8px
+      margin-bottom 14px
+      box-shadow 0 2px 6px rgba(0,0,0,0.12)
+
+    h3
+      margin 0 0 10px 0
+      font-size 1.2em
+      font-weight 600
+      color #222
+      letter-spacing 0.03em
+
+      a
+        color inherit
+        text-decoration none
+        transition color 0.3s ease
+
+        &:hover
+          color #3a8ee6
+          text-decoration underline
+
+    p
+      margin 6px 0
+      font-size 0.95em
+      color #555
+      line-height 1.4
+
+    &:hover
+      transform scale(1.05)
+      box-shadow:
+        inset 0 2px 6px rgba(255,255,255,0.7),
+        0 8px 24px rgba(0,0,0,0.18)
+
+@media screen and (max-width: 768px)
+  .bangumi-cards .card
+    width 100%
+
+html[data-theme='dark'] .bangumi-cards .card
+  background: linear-gradient(rgba(30,30,30,0.65), rgba(30,30,30,0.25))
+  border: 1px solid rgba(255, 255, 255, 0.15)
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.15),
+    0 6px 18px rgba(0,0,0,0.6)
+  backdrop-filter blur(14px)
+  -webkit-backdrop-filter blur(14px)
+  color #ddd
+
+  h3
+    color #eee
+
+  p
+    color #bbb
+
+  a
+    color #aaa
+    transition color 0.3s ease
+
+    &:hover
+      color #7abaff
+
+
+
+/* 背景宇宙星光 */
+#universe
+  display: block
+  position: fixed
+  margin: 0
+  padding: 0
+  border: 0
+  outline: 0
+  left: 0
+  top: 0
+  width: 100%
+  height: 100%
+  pointer-events: none
+  z-index: -1
+  
+

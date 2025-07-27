@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>梦</title>
-  <icon>http://chenzhenan.site/img/avatar.webp</icon>
-  <subtitle>夜</subtitle>
-  <link href="http://chenzhenan.site/atom.xml" rel="self"/>
+  <icon>https://na562080.site/img/avatar.webp</icon>
   
-  <link href="http://chenzhenan.site/"/>
-  <updated>2025-07-21T06:36:54.000Z</updated>
-  <id>http://chenzhenan.site/</id>
+  <link href="https://na562080.site/atom.xml" rel="self"/>
+  
+  <link href="https://na562080.site/"/>
+  <updated>2025-07-27T09:13:29.583Z</updated>
+  <id>https://na562080.site/</id>
   
   <author>
     <name>沉云</name>
@@ -17,11 +17,47 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>追忆-随想</title>
-    <link href="http://chenzhenan.site/2025/07/21/%E8%BF%BD%E5%BF%86-%E9%9A%8F%E6%83%B3.html"/>
-    <id>http://chenzhenan.site/2025/07/21/%E8%BF%BD%E5%BF%86-%E9%9A%8F%E6%83%B3.html</id>
-    <published>2025-07-21T06:36:54.000Z</published>
-    <updated>2025-07-21T06:36:54.000Z</updated>
+    <title>仓库</title>
+    <link href="https://na562080.site/2025/07/27/%E4%BB%93%E5%BA%93.html"/>
+    <id>https://na562080.site/2025/07/27/%E4%BB%93%E5%BA%93.html</id>
+    <published>2025-07-27T09:05:05.000Z</published>
+    <updated>2025-07-27T09:13:29.583Z</updated>
+    
+    
+    <summary type="html">写杂谈一些素材</summary>
+    
+    
+    
+    
+    <category term="知识" scheme="https://na562080.site/tags/%E7%9F%A5%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习--循环神经网络RNN(ing)</title>
+    <link href="https://na562080.site/2025/07/26/deep-learning-RNN.html"/>
+    <id>https://na562080.site/2025/07/26/deep-learning-RNN.html</id>
+    <published>2025-07-26T12:39:53.000Z</published>
+    <updated>2025-07-26T13:36:27.000Z</updated>
+    
+    
+    <summary type="html">循环神经网络</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>self-随想</title>
+    <link href="https://na562080.site/2025/07/26/self-%E9%9A%8F%E6%83%B3.html"/>
+    <id>https://na562080.site/2025/07/26/self-%E9%9A%8F%E6%83%B3.html</id>
+    <published>2025-07-26T05:36:28.000Z</published>
+    <updated>2025-07-19T13:04:00.000Z</updated>
     
     
     <summary type="html">出入需令(密码)</summary>
@@ -32,11 +68,85 @@
   </entry>
   
   <entry>
-    <title>归途</title>
-    <link href="http://chenzhenan.site/2025/07/20/%E5%BD%92%E9%80%94.html"/>
-    <id>http://chenzhenan.site/2025/07/20/%E5%BD%92%E9%80%94.html</id>
+    <title>深度学习--卷积神经网络CNN</title>
+    <link href="https://na562080.site/2025/07/26/deep-learning-CNN.html"/>
+    <id>https://na562080.site/2025/07/26/deep-learning-CNN.html</id>
+    <published>2025-07-26T03:12:17.000Z</published>
+    <updated>2025-07-26T11:36:27.000Z</updated>
+    
+    
+    <summary type="html">卷积神经网络</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>随想</title>
+    <link href="https://na562080.site/2025/07/26/musings-%E9%9A%8F%E6%83%B3.html"/>
+    <id>https://na562080.site/2025/07/26/musings-%E9%9A%8F%E6%83%B3.html</id>
+    <published>2025-07-26T00:55:22.000Z</published>
+    <updated>2025-07-27T09:17:37.597Z</updated>
+    
+    
+    <summary type="html">想到什么写什么</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习-多层感知机MLP</title>
+    <link href="https://na562080.site/2025/07/23/deep-learning-MLP.html"/>
+    <id>https://na562080.site/2025/07/23/deep-learning-MLP.html</id>
+    <published>2025-07-23T07:30:02.000Z</published>
+    <updated>2025-07-23T11:36:27.000Z</updated>
+    
+    
+    <summary type="html">深度学习多层感知机代码一些分析</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写文章的无奈</title>
+    <link href="https://na562080.site/2025/07/23/musings-%E6%9D%82%E8%B0%88-%E5%86%99%E4%BD%9C.html"/>
+    <id>https://na562080.site/2025/07/23/musings-%E6%9D%82%E8%B0%88-%E5%86%99%E4%BD%9C.html</id>
+    <published>2025-07-23T06:08:31.000Z</published>
+    <updated>2025-07-27T09:23:01.090Z</updated>
+    
+    
+    <summary type="html">一点写作的随想</summary>
+    
+    
+    
+    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="想法" scheme="https://na562080.site/tags/%E6%83%B3%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>云沉梦轻</title>
+    <link href="https://na562080.site/2025/07/20/%E4%BA%91%E6%B2%89%E6%A2%A6%E8%BD%BB.html"/>
+    <id>https://na562080.site/2025/07/20/%E4%BA%91%E6%B2%89%E6%A2%A6%E8%BD%BB.html</id>
     <published>2025-07-20T06:02:11.000Z</published>
-    <updated>2025-07-20T06:14:23.955Z</updated>
+    <updated>2025-07-25T08:51:39.864Z</updated>
     
     
     <summary type="html">出入需令(密码)</summary>
@@ -44,14 +154,14 @@
     
     
     
-    <category term="归途" scheme="http://chenzhenan.site/tags/%E5%BD%92%E9%80%94/"/>
+    <category term="云沉梦轻" scheme="https://na562080.site/tags/%E4%BA%91%E6%B2%89%E6%A2%A6%E8%BD%BB/"/>
     
   </entry>
   
   <entry>
     <title>gal追忆</title>
-    <link href="http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html"/>
-    <id>http://chenzhenan.site/2025/07/19/%E8%BF%BD%E5%BF%86-gal.html</id>
+    <link href="https://na562080.site/2025/07/19/self-%E8%BF%BD%E5%BF%86-gal.html"/>
+    <id>https://na562080.site/2025/07/19/self-%E8%BF%BD%E5%BF%86-gal.html</id>
     <published>2025-07-19T13:04:00.000Z</published>
     <updated>2025-07-19T13:04:00.000Z</updated>
     
@@ -64,11 +174,11 @@
   </entry>
   
   <entry>
-    <title>记录</title>
-    <link href="http://chenzhenan.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html"/>
-    <id>http://chenzhenan.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</id>
+    <title>更新的记录和碎碎念</title>
+    <link href="https://na562080.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html"/>
+    <id>https://na562080.site/2025/07/18/%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95.html</id>
     <published>2025-07-18T15:21:01.000Z</published>
-    <updated>2025-07-21T06:08:12.334Z</updated>
+    <updated>2025-07-27T09:21:05.377Z</updated>
     
     
     <summary type="html">一些想法与更新</summary>
@@ -79,51 +189,28 @@
   </entry>
   
   <entry>
-    <title>摇滚追忆</title>
-    <link href="http://chenzhenan.site/2025/07/14/%E8%BF%BD%E5%BF%86-%E6%91%87%E6%BB%9A.html"/>
-    <id>http://chenzhenan.site/2025/07/14/%E8%BF%BD%E5%BF%86-%E6%91%87%E6%BB%9A.html</id>
-    <published>2025-07-14T13:43:38.000Z</published>
-    <updated>2025-07-19T13:52:27.088Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="杂谈" scheme="http://chenzhenan.site/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习代码模板与分析(ing)</title>
-    <link href="http://chenzhenan.site/2025/07/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%88%86%E6%9E%90.html"/>
-    <id>http://chenzhenan.site/2025/07/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF%E4%B8%8E%E5%88%86%E6%9E%90.html</id>
+    <title>深度学习-线性神经网络Linear</title>
+    <link href="https://na562080.site/2025/07/12/deep-learning-Linear.html"/>
+    <id>https://na562080.site/2025/07/12/deep-learning-Linear.html</id>
     <published>2025-07-12T11:56:51.000Z</published>
-    <updated>2025-07-14T11:36:27.000Z</updated>
+    <updated>2025-07-22T11:36:27.000Z</updated>
     
     
-    <summary type="html">深度学习代码一些模板与分析（不一定典型）</summary>
+    <summary type="html">深度学习线性神经网络代码一些分析</summary>
     
     
     
-    <category term="学习" scheme="http://chenzhenan.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="http://chenzhenan.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>计算机基础知识</title>
-    <link href="http://chenzhenan.site/2025/07/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E8%AE%A1%E7%AE%97%E6%9C%BA.html"/>
-    <id>http://chenzhenan.site/2025/07/11/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E8%AE%A1%E7%AE%97%E6%9C%BA.html</id>
+    <link href="https://na562080.site/2025/07/11/machine-learning-basics-computer.html"/>
+    <id>https://na562080.site/2025/07/11/machine-learning-basics-computer.html</id>
     <published>2025-07-11T02:13:57.000Z</published>
     <updated>2025-07-19T02:15:32.000Z</updated>
     
@@ -132,36 +219,19 @@
     
     
     
-    <category term="知识查阅" scheme="http://chenzhenan.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
+    <category term="知识查阅" scheme="https://na562080.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
     
     
-    <category term="知识" scheme="http://chenzhenan.site/tags/%E7%9F%A5%E8%AF%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2025-学习日志</title>
-    <link href="http://chenzhenan.site/2025/07/10/%E6%97%A5%E5%BF%97-2025.html"/>
-    <id>http://chenzhenan.site/2025/07/10/%E6%97%A5%E5%BF%97-2025.html</id>
-    <published>2025-07-10T13:36:47.000Z</published>
-    <updated>2025-07-21T08:21:05.873Z</updated>
-    
-    
-    <summary type="html">2025-每日学习记录</summary>
-    
-    
-    
-    <category term="日志" scheme="http://chenzhenan.site/categories/%E6%97%A5%E5%BF%97/"/>
-    
+    <category term="知识" scheme="https://na562080.site/tags/%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
   <entry>
-    <title>传火祭祀场</title>
-    <link href="http://chenzhenan.site/2025/07/09/%E5%AF%BC%E8%88%AA.html"/>
-    <id>http://chenzhenan.site/2025/07/09/%E5%AF%BC%E8%88%AA.html</id>
+    <title>传火祭祀场--导航</title>
+    <link href="https://na562080.site/2025/07/09/%E5%AF%BC%E8%88%AA.html"/>
+    <id>https://na562080.site/2025/07/09/%E5%AF%BC%E8%88%AA.html</id>
     <published>2025-07-09T12:55:35.000Z</published>
-    <updated>2025-07-20T06:04:27.365Z</updated>
+    <updated>2025-07-27T07:30:20.832Z</updated>
     
     
     <summary type="html">快速跳转到各系列文章</summary>
@@ -173,8 +243,8 @@
   
   <entry>
     <title>深度学习常用方法表格</title>
-    <link href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E8%A1%A8%E6%A0%BC.html"/>
-    <id>http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E8%A1%A8%E6%A0%BC.html</id>
+    <link href="https://na562080.site/2025/07/09/deep-learning-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E8%A1%A8%E6%A0%BC.html"/>
+    <id>https://na562080.site/2025/07/09/deep-learning-%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E8%A1%A8%E6%A0%BC.html</id>
     <published>2025-07-09T08:14:29.000Z</published>
     <updated>2025-07-10T08:14:29.000Z</updated>
     
@@ -183,36 +253,36 @@
     
     
     
-    <category term="知识查阅" scheme="http://chenzhenan.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
+    <category term="知识查阅" scheme="https://na562080.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
     
     
-    <category term="深度学习" scheme="http://chenzhenan.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>深度学习基础（编写ing）</title>
-    <link href="http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html"/>
-    <id>http://chenzhenan.site/2025/07/09/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html</id>
+    <link href="https://na562080.site/2025/07/09/deep-learning-basics.html"/>
+    <id>https://na562080.site/2025/07/09/deep-learning-basics.html</id>
     <published>2025-07-09T03:22:20.000Z</published>
-    <updated>2025-07-19T14:16:32.000Z</updated>
+    <updated>2025-07-21T14:16:32.000Z</updated>
     
     
     <summary type="html">深度学习入门</summary>
     
     
     
-    <category term="学习" scheme="http://chenzhenan.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="http://chenzhenan.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>数学基础知识</title>
-    <link href="http://chenzhenan.site/2025/07/06/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E6%95%B0%E5%AD%A6.html"/>
-    <id>http://chenzhenan.site/2025/07/06/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-%E6%95%B0%E5%AD%A6.html</id>
+    <link href="https://na562080.site/2025/07/06/machine-learning-basics-math.html"/>
+    <id>https://na562080.site/2025/07/06/machine-learning-basics-math.html</id>
     <published>2025-07-06T08:21:51.000Z</published>
     <updated>2025-07-18T02:15:32.000Z</updated>
     
@@ -221,38 +291,38 @@
     
     
     
-    <category term="知识查阅" scheme="http://chenzhenan.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
+    <category term="知识查阅" scheme="https://na562080.site/categories/%E7%9F%A5%E8%AF%86%E6%9F%A5%E9%98%85/"/>
     
     
-    <category term="知识" scheme="http://chenzhenan.site/tags/%E7%9F%A5%E8%AF%86/"/>
+    <category term="知识" scheme="https://na562080.site/tags/%E7%9F%A5%E8%AF%86/"/>
     
   </entry>
   
   <entry>
     <title>机器学习基础</title>
-    <link href="http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html"/>
-    <id>http://chenzhenan.site/2025/07/06/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E5%85%A5%E9%97%A8.html</id>
+    <link href="https://na562080.site/2025/07/06/machine-learning-basics.html"/>
+    <id>https://na562080.site/2025/07/06/machine-learning-basics.html</id>
     <published>2025-07-06T06:31:28.000Z</published>
-    <updated>2025-07-14T15:18:37.000Z</updated>
+    <updated>2025-07-21T15:18:37.000Z</updated>
     
     
     <summary type="html">机器学习入门</summary>
     
     
     
-    <category term="学习" scheme="http://chenzhenan.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="机器学习" scheme="http://chenzhenan.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://na562080.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>起源</title>
-    <link href="http://chenzhenan.site/2025/07/03/%E8%B5%B7%E6%BA%90.html"/>
-    <id>http://chenzhenan.site/2025/07/03/%E8%B5%B7%E6%BA%90.html</id>
+    <link href="https://na562080.site/2025/07/03/%E8%B5%B7%E6%BA%90.html"/>
+    <id>https://na562080.site/2025/07/03/%E8%B5%B7%E6%BA%90.html</id>
     <published>2025-07-03T13:12:20.000Z</published>
-    <updated>2025-07-18T15:46:45.396Z</updated>
+    <updated>2025-07-27T07:38:08.010Z</updated>
     
     
       
@@ -265,7 +335,7 @@
     
     
     
-    <category term="杂谈" scheme="http://chenzhenan.site/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
     
     
   </entry>

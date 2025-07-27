@@ -5,13 +5,10 @@ var titleTime;
 
 document.addEventListener('visibilitychange', function () {
     if (document.hidden) {
-        document.title = '(＾▽＾)ノ ';
+        document.title = ' ◕  _  ◕ ';
         clearTimeout(titleTime);
     } else {
-        document.title = '♪(^∇^*) 欢迎回来！ ' + OriginTitle;
-        titleTime = setTimeout(function () {
-            document.title = OriginTitle;
-        }, 2000);
+         document.title = OriginTitle;
     }
 });
 

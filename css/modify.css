@@ -70,7 +70,7 @@
 .layout_post > #page,
 .layout_post > #post,
 .read-mode .layout_post > #post {
-  background: rgba(255,255,255,0.65);
+  background: rgba(255,255,255,0.85);
 }
 #aside-content > .card-widget,
 #aside-content > .sticky_layout > .card-widget {

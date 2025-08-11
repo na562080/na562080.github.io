@@ -1,0 +1,532 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>深度学习--循环神经网络RNN(ing) | 梦游</title><meta name="author" content="沉云"><meta name="copyright" content="沉云"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="循环神经网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习--循环神经网络RNN(ing)">
+<meta property="og:url" content="https://na562080.site/2025/07/26/deep-learning-RNN.html">
+<meta property="og:site_name" content="梦游">
+<meta property="og:description" content="循环神经网络">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://na562080.site/img/avatar.webp">
+<meta property="article:published_time" content="2025-07-26T12:39:53.000Z">
+<meta property="article:modified_time" content="2025-07-29T13:36:27.000Z">
+<meta property="article:author" content="沉云">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://na562080.site/img/avatar.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "深度学习--循环神经网络RNN(ing)",
+  "url": "https://na562080.site/2025/07/26/deep-learning-RNN.html",
+  "image": "https://na562080.site/img/avatar.webp",
+  "datePublished": "2025-07-26T12:39:53.000Z",
+  "dateModified": "2025-07-29T13:36:27.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "沉云",
+      "url": "https://github.com/na562080"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://na562080.site/2025/07/26/deep-learning-RNN.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '深度学习--循环神经网络RNN(ing)',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/modify.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="梦游" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-image: url(/img/Clifftop_Walk_At_Pourville.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">25</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" alt="Logo"><span class="site-name">梦游</span></a><a class="nav-page-title" href="/"><span class="site-name">深度学习--循环神经网络RNN(ing)</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 说说</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">深度学习--循环神经网络RNN(ing)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-07-26T12:39:53.000Z" title="发表于 2025-07-26 20:39:53">2025-07-26</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-07-29T13:36:27.000Z" title="更新于 2025-07-29 21:36:27">2025-07-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p>参考<br><a target="_blank" rel="noopener" href="https://zh-v2.d2l.ai/chapter_recurrent-neural-networks/index.html">循环神经网络</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30844905">一文搞懂RNN(循环神经网络)基础篇</a><br><a target="_blank" rel="noopener" href="https://zybuluo.com/hanbingtao/note/541458">零基础入门深度学习(5) - 循环神经网络</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/123211148">史上最详细循环神经网络讲解(RNN&#x2F;LSTM&#x2F;GRU)</a></p>
+</blockquote>
+<h1 id="循环神经网络-recurrent-neural-network，RNN"><a href="#循环神经网络-recurrent-neural-network，RNN" class="headerlink" title="循环神经网络(recurrent neural network，RNN)"></a>循环神经网络(recurrent neural network，RNN)</h1><p>到目前为止默认数据都来自于某种分布，并且所有样本都是独立同分布的.然而大多数数据并非如此。<br>不仅仅可以接收一个序列作为输入，而是还可能期望继续猜测这个序列的后续。</p>
+<p>循环神经网络(recurrent neural network，RNN)则可以更好地处理序列信息。 循环神经网络通过引入状态变量存储过去的信息和当前的输入，从而可以确定当前的输出。</p>
+<h2 id="自回归模型"><a href="#自回归模型" class="headerlink" title="自回归模型"></a>自回归模型</h2><table>
+<thead>
+<tr>
+<th>维度</th>
+<th>自回归模型(AR)</th>
+<th>隐变量自回归模型(Latent AR)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>是否含隐变量</td>
+<td>否</td>
+<td>是，隐变量为概率意义上的状态</td>
+</tr>
+<tr>
+<td>数据依赖</td>
+<td>仅自身历史数据</td>
+<td>依赖历史观测 + 推断出的隐状态</td>
+</tr>
+<tr>
+<td>趋势建模能力</td>
+<td>线性、平稳趋势</td>
+<td>可建模非线性、状态切换、多模态序列</td>
+</tr>
+<tr>
+<td>推断方式</td>
+<td>参数估计(如最小二乘)</td>
+<td>概率推断(如EM、变分推断)</td>
+</tr>
+<tr>
+<td>表达能力</td>
+<td>有限，主要适用于简单结构序列</td>
+<td>表达力强，适用于复杂动态系统</td>
+</tr>
+</tbody></table>
+<h3 id="自回归模型-autoregressive-models，AR"><a href="#自回归模型-autoregressive-models，AR" class="headerlink" title="自回归模型(autoregressive models，AR)"></a>自回归模型(autoregressive models，AR)</h3><p>使用时间序列自身的过去值的线性组合来预测未来值<br>$$<br>X_t &#x3D; c + \sum_{i&#x3D;1}^p \phi_i X_{t-i} + \epsilon_t<br>$$</p>
+<ul>
+<li>$p$：滞后阶数；</li>
+<li>$\phi_i$：模型参数；</li>
+<li>$\epsilon_t$：白噪声项。</li>
+</ul>
+<p>缺陷：仅依赖自身历史观测值；假设数据平稳，趋势是线性的；无需建模潜在状态；适用于简单趋势建模，不擅长处理状态切换或复杂行为。</p>
+<h3 id="隐变量自回归模型-latent-autoregressive-models"><a href="#隐变量自回归模型-latent-autoregressive-models" class="headerlink" title="隐变量自回归模型(latent autoregressive models)"></a>隐变量自回归模型(latent autoregressive models)</h3><p>引入不可观测的隐状态变量(latent variable)，作为对历史信息的压缩总结，通过该状态驱动观测值的生成。</p>
+<p>$$<br>\begin{cases}<br>z_t &#x3D; f(z_{t-1}, x_{t-1}) &amp; \text{(隐状态递归更新)} \\<br>x_t \sim p(x_t \mid z_t) &amp; \text{(观测值生成)}<br>\end{cases}<br>$$</p>
+<ul>
+<li>$z_t$：隐状态(通常为概率分布)；</li>
+<li>$f$：状态转移函数(可为神经网络或状态空间模型)；</li>
+<li>$p(x_t \mid z_t)$：条件生成分布。</li>
+</ul>
+<p>特点：能建模状态转换、周期性、非线性结构；适用于多模态、复杂序列；需要通过统计方法(如 EM 算法、变分推断)估计隐变量的分布；隐状态是软分配的，不是硬选择。</p>
+<h2 id="马尔可夫模型"><a href="#马尔可夫模型" class="headerlink" title="马尔可夫模型"></a>马尔可夫模型</h2><p>时间序列的当前状态 $X_t$ 理论上依赖于全部过去：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, X_{t-2}, \ldots)<br>$$</p>
+<p>马尔可夫条件假设此依赖可简化为有限阶：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, \ldots, X_{t-p})<br>$$</p>
+<p>当 $p&#x3D;1$ 时，即为一阶马尔可夫性质，当前状态只依赖前一状态：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, X_{t-2}, \ldots) &#x3D; P(X_t \mid X_{t-1})<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>特点对比</th>
+<th>马尔可夫模型</th>
+<th>自回归模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>状态类型</td>
+<td>离散(如晴天、雨天、雪天)</td>
+<td>连续数值(如体重)</td>
+</tr>
+<tr>
+<td>依赖对象</td>
+<td>前一时刻的状态</td>
+<td>前几个时刻的观测值</td>
+</tr>
+<tr>
+<td>预测方式</td>
+<td>状态转移概率</td>
+<td>线性组合(加权求和)加白噪声</td>
+</tr>
+</tbody></table>
+<h2 id="序列模型"><a href="#序列模型" class="headerlink" title="序列模型"></a>序列模型</h2><p>$$<br>x_t \sim P(x_t \mid x_{t-1}, \ldots, x_1)<br>$$</p>
+<p>$\sim$ 代表“从……中采样”。随机变量 $x_t$ 的取值是根据条件概率分布 $P(x_t\mid x_{t-1}, \ldots, x_1)$ 生成的。当前时刻的 $x_t$ 是依赖于之前所有时刻的变量 $x_1, x_2, \ldots, x_{t-1}$ 的。这反映了序列中元素之间的关联性，说明 $x_t$ 与之前的元素有关联，而非独立产生。</p>
+<p>ps:下标顺序只是展示的顺序问题，数学意义上并不影响条件集合的内容。</p>
+<p>给定一个长度为 $T$ 的序列 $(x_1, x_2, \ldots, x_T)$，它们的联合概率分布满足<strong>链式法则</strong></p>
+<blockquote>
+</blockquote>
+<p>$$<br>P(x_1, x_2, \ldots, x_T) &#x3D; \prod_{t&#x3D;1}^T P(x_t \mid x_1, x_2, \ldots, x_{t-1})<br>$$</p>
+<p>时间步(time step)用 $t \in \mathbb{Z}^+$ 表示序列中的第 $t$ 个时间点。<br>目标是建模序列中任一时刻的输出依赖于之前的若干时间步输入。</p>
+<h2 id="自回归模型-1"><a href="#自回归模型-1" class="headerlink" title="自回归模型"></a>自回归模型</h2><p>第一种策略，假设在现实情况下相当长的序列$x_{t-1}, \dots, x_1$ 可能是不必要的，  因此我们只需要满足某个长度为 $\tau$ 的时间跨度，即使用观测序列 $x_{t-1}, \dots, x_{t-\tau}$。当下获得的最直接的好处就是参数的数量总是不变的，至少在 $t &gt; \tau$ 时如此，这就使我们能够训练一个上面提及的深度网络。这种模型被称为 <strong>自回归模型</strong>(autoregressive models)，因为它们是对自己执行回归。</p>
+<p>第二种策略，如图 8.1.2 所示，是保留一些对过去观测的总结 $h_t$，并且同时更新预测 $\hat{x}<em>t$ 和总结 $h_t$。这就产生了基于 $\hat{x}<em>t &#x3D; P(x_t \mid h_t)$ 估计 $x_t$，以及公式 $h_t &#x3D; g(h</em>{t-1}, x</em>{t-1})$ 更新的模型。由于 $h_t$ 从未被观测到，这类模型也被称为<strong>隐变量自回归模型</strong>(latent autoregressive models)。</p>
+<p>线性自回归模型（AR(p)）</p>
+<p>$$<br>x_t &#x3D; \phi_1 x_{t-1} + \phi_2 x_{t-2} + \dots + \phi_p x_{t-p} + \epsilon_t<br>$$</p>
+<ul>
+<li>$x_t$：当前值</li>
+<li>$\phi_i$：模型参数</li>
+<li>$\epsilon_t$：噪声项（白噪声）</li>
+<li>$p$：窗口长度</li>
+</ul>
+<p>非线性自回归模型（如 RNN）</p>
+<p>将上式替换为非线性表达：</p>
+<p>$$<br>x_t &#x3D; f(x_{t-1}, x_{t-2}, \dots, x_{t-p}) + \epsilon_t<br>$$</p>
+<p>或使用隐藏状态方式：</p>
+<p>$$<br>\begin{aligned}<br>h_t &amp;&#x3D; f(h_{t-1}, x_{t-1}) \\<br>\hat{x}_t &amp;&#x3D; g(h_t)<br>\end{aligned}<br>$$</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://z.wiki/u/ywNYxL"></p>
+<h2 id="马尔可夫模型-Markov-Model"><a href="#马尔可夫模型-Markov-Model" class="headerlink" title="马尔可夫模型(Markov Model)"></a>马尔可夫模型(Markov Model)</h2><p>马尔可夫模型是一个统计建模方法。</p>
+<p>时间序列的当前状态 $X_t$ 理论上依赖于全部过去：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, X_{t-2}, \ldots)<br>$$</p>
+<p>马尔可夫条件假设此依赖可简化为有限阶：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, \ldots, X_{t-p})<br>$$</p>
+<p>当 $p&#x3D;1$ 时，即为一阶马尔可夫性质，当前状态只依赖前一状态：</p>
+<p>$$<br>P(X_t \mid X_{t-1}, X_{t-2}, \ldots) &#x3D; P(X_t \mid X_{t-1})<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>特点对比</th>
+<th>马尔可夫模型</th>
+<th>自回归模型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>状态类型</td>
+<td>离散(如晴天、雨天、雪天)</td>
+<td>连续数值(如体重)</td>
+</tr>
+<tr>
+<td>依赖对象</td>
+<td>前一时刻的状态</td>
+<td>前几个时刻的观测值</td>
+</tr>
+<tr>
+<td>预测方式</td>
+<td>状态转移概率</td>
+<td>线性组合(加权求和)加白噪声</td>
+</tr>
+</tbody></table>
+<h2 id="有隐状态的循环神经网络"><a href="#有隐状态的循环神经网络" class="headerlink" title="有隐状态的循环神经网络"></a>有隐状态的循环神经网络</h2><p><img src= "/img/loading.gif" data-lazy-src="https://zh-v2.d2l.ai/_images/rnn.svg"></p>
+<p>代码中的 H 被初始化为一个随机值，表示初始时刻的隐藏状态。这一点是非常重要的，因为在序列数据的处理过程中，我们通常需要为网络提供一个初始的隐藏状态，这个初始隐藏状态的选择可以影响模型的学习过程。</p>
+<p>H 的初始化表示的是 初始时刻的隐藏状态，它在第一次前向传播时被赋值为随机值，之后的每个时间步中，隐藏状态会根据前一个时间步的隐藏状态和当前的输入来更新。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X, W_xh = torch.normal(<span class="number">0</span>, <span class="number">1</span>, (<span class="number">3</span>, <span class="number">1</span>)), torch.normal(<span class="number">0</span>, <span class="number">1</span>, (<span class="number">1</span>, <span class="number">4</span>))</span><br><span class="line">H, W_hh = torch.normal(<span class="number">0</span>, <span class="number">1</span>, (<span class="number">3</span>, <span class="number">4</span>)), torch.normal(<span class="number">0</span>, <span class="number">1</span>, (<span class="number">4</span>, <span class="number">4</span>))</span><br><span class="line">torch.matmul(X, W_xh) + torch.matmul(H, W_hh)</span><br></pre></td></tr></table></figure>
+
+<p>拼接的目的：合并计算，减少操作次数.只是计算上的重排和合并，模型逻辑没变,还是用两个不同的权重矩阵分别对不同输入部分作用，只是计算时合成一步。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">torch.matmul(torch.cat((X, H), <span class="number">1</span>), torch.cat((W_xh, W_hh), <span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+
+<p><img src= "/img/loading.gif" data-lazy-src="http://i0.hdslb.com/bfs/new_dyn/c1cfad32822fbd8e78462e149ce2226b404701658.jpg"></p>
+<h2 id="循环神经网络的从零开始实现"><a href="#循环神经网络的从零开始实现" class="headerlink" title="循环神经网络的从零开始实现"></a>循环神经网络的从零开始实现</h2><h3 id="独热编码"><a href="#独热编码" class="headerlink" title="独热编码"></a>独热编码</h3><p>PyTorch 的 F.one_hot 函数将数字序列 [0, 2] 转换为 独热编码（one-hot encoding），是高维稀疏向量。<br>ps:word embedding可以替代one hot</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F.one_hot(torch.tensor([<span class="number">0</span>, <span class="number">2</span>]), <span class="built_in">len</span>(vocab))</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># inputs的形状：(时间步数量，批量大小，词表大小)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rnn</span>(<span class="params">inputs, state, params</span>):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 拆包出五个参数,params 是一个元组或列表，里面按顺序包含这些权重和偏置</span></span><br><span class="line">    W_xh, W_hh, b_h, W_hq, b_q = params</span><br><span class="line">    <span class="comment"># state 是只有一个元素的元组,把元组中第一个元素赋值给变量 H。且RNN 变体可能会返回多个状态这种写法安全而通用</span></span><br><span class="line">    H, = state</span><br><span class="line">    <span class="comment"># 初始化一个空列表，用于收集每个时间步的输出</span></span><br><span class="line">    outputs = []</span><br><span class="line">    <span class="comment"># X的形状：(批量大小，词表大小)</span></span><br><span class="line">    <span class="keyword">for</span> X <span class="keyword">in</span> inputs:</span><br><span class="line">        H = torch.tanh(torch.mm(X, W_xh) + torch.mm(H, W_hh) + b_h)  <span class="comment"># 引入非线性，摆脱线性约束</span></span><br><span class="line">        Y = torch.mm(H, W_hq) + b_q</span><br><span class="line">        outputs.append(Y)</span><br><span class="line">    <span class="keyword">return</span> torch.cat(outputs, dim=<span class="number">0</span>), (H,)</span><br></pre></td></tr></table></figure>
+<p><img src= "/img/loading.gif" data-lazy-src="https://static.zybuluo.com/hanbingtao/ph68deq7il3hfp3ec06wfk2b/image.png"></p>
+<h2 id="循环神经网络的简洁实现"><a href="#循环神经网络的简洁实现" class="headerlink" title="循环神经网络的简洁实现"></a>循环神经网络的简洁实现</h2><p>256个隐藏单元，一维张量，长度256。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num_hiddens = <span class="number">256</span></span><br><span class="line">rnn_layer = nn.RNN(<span class="built_in">len</span>(vocab), num_hiddens)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RNNModel</span>(nn.Module):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;循环神经网络模型&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 定义继承自 nn.Module 的模型类，**kwargs 用于兼容父类 __init__ 的参数</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, rnn_layer, vocab_size, **kwargs</span>):</span><br><span class="line">        <span class="built_in">super</span>(RNNModel, <span class="variable language_">self</span>).__init__(**kwargs)</span><br><span class="line">        <span class="variable language_">self</span>.rnn = rnn_layer</span><br><span class="line">        <span class="variable language_">self</span>.vocab_size = vocab_size</span><br><span class="line">        <span class="variable language_">self</span>.num_hiddens = <span class="variable language_">self</span>.rnn.hidden_size</span><br><span class="line">        <span class="comment"># 如果RNN是双向的（之后将介绍），num_directions应该是2，否则应该是1</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="variable language_">self</span>.rnn.bidirectional:</span><br><span class="line">            <span class="variable language_">self</span>.num_directions = <span class="number">1</span></span><br><span class="line">            <span class="variable language_">self</span>.linear = nn.Linear(<span class="variable language_">self</span>.num_hiddens, <span class="variable language_">self</span>.vocab_size)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="variable language_">self</span>.num_directions = <span class="number">2</span></span><br><span class="line">            <span class="variable language_">self</span>.linear = nn.Linear(<span class="variable language_">self</span>.num_hiddens * <span class="number">2</span>, <span class="variable language_">self</span>.vocab_size)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, inputs, state</span>):</span><br><span class="line">        X = F.one_hot(inputs.T.long(), <span class="variable language_">self</span>.vocab_size)</span><br><span class="line">        X = X.to(torch.float32) <span class="comment"># 转换为浮点数张量</span></span><br><span class="line">        Y, state = <span class="variable language_">self</span>.rnn(X, state)</span><br><span class="line">        <span class="comment"># 全连接层首先将Y的形状改为(时间步数*批量大小,隐藏单元数)</span></span><br><span class="line">        <span class="comment"># 它的输出形状是(时间步数*批量大小,词表大小)。</span></span><br><span class="line">        output = <span class="variable language_">self</span>.linear(Y.reshape((-<span class="number">1</span>, Y.shape[-<span class="number">1</span>])))</span><br><span class="line">        <span class="keyword">return</span> output, state</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">begin_state</span>(<span class="params">self, device, batch_size=<span class="number">1</span></span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(<span class="variable language_">self</span>.rnn, nn.LSTM):</span><br><span class="line">            <span class="comment"># nn.GRU以张量作为隐状态</span></span><br><span class="line">            <span class="keyword">return</span>  torch.zeros((<span class="variable language_">self</span>.num_directions * <span class="variable language_">self</span>.rnn.num_layers,</span><br><span class="line">                                 batch_size, <span class="variable language_">self</span>.num_hiddens),</span><br><span class="line">                                device=device)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="comment"># nn.LSTM以元组作为隐状态</span></span><br><span class="line">            <span class="keyword">return</span> (torch.zeros((</span><br><span class="line">                <span class="variable language_">self</span>.num_directions * <span class="variable language_">self</span>.rnn.num_layers,</span><br><span class="line">                batch_size, <span class="variable language_">self</span>.num_hiddens), device=device),</span><br><span class="line">                    torch.zeros((</span><br><span class="line">                        <span class="variable language_">self</span>.num_directions * <span class="variable language_">self</span>.rnn.num_layers,</span><br><span class="line">                        batch_size, <span class="variable language_">self</span>.num_hiddens), device=device))</span><br></pre></td></tr></table></figure>
+
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><p>RNN 本质上就是一个非线性的、自适应的、神经网络形式的自回归模型。<br>只能从前往后建模：</p>
+<ul>
+<li>状态更新：</li>
+</ul>
+<p>$$<br>S_t &#x3D; f(U V_t + W S_{t-1} + b)<br>$$</p>
+<ul>
+<li>输出计算：</li>
+</ul>
+<p>$$<br>O_t &#x3D; g(S_t, V_t)<br>$$</p>
+<p>权重在所有时间步(t&#x3D;1 到 t&#x3D;T)之间是相同的，同一组权重参数会被用于所有时间步的计算</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://z.wiki/u/oiTY3A"></p>
+<h2 id="双向-RNN"><a href="#双向-RNN" class="headerlink" title="双向 RNN"></a>双向 RNN</h2><p>同时考虑过去和未来：</p>
+<p>$$<br>\begin{aligned}<br>h_t^{\rightarrow} &amp;&#x3D; f(h_{t-1}^{\rightarrow}, x_t) \\<br>h_t^{\leftarrow} &amp;&#x3D; f(h_{t+1}^{\leftarrow}, x_t) \\<br>h_t &amp;&#x3D; [h_t^{\rightarrow}; h_t^{\leftarrow}] \\<br>y_t &amp;&#x3D; g(h_t)<br>\end{aligned}<br>$$</p>
+<h2 id="向量化"><a href="#向量化" class="headerlink" title="向量化"></a>向量化</h2><p>神经网络的输入和输出都是向量，为了让语言模型能够被神经网络处理，我们必须把词表达为向量的形式，这样神经网络才能处理它。</p>
+<h2 id="深度循环神经网络"><a href="#深度循环神经网络" class="headerlink" title="深度循环神经网络"></a>深度循环神经网络</h2><p>前面循环神经网络只有一个隐藏层，我们当然也可以堆叠两个以上的隐藏层，这样就得到了深度循环神经网络。</p>
+<h2 id="循环神经网络的训练算法：BPTT"><a href="#循环神经网络的训练算法：BPTT" class="headerlink" title="循环神经网络的训练算法：BPTT"></a>循环神经网络的训练算法：BPTT</h2><p>BPTT算法是针对循环层的训练算法，它的基本原理和BP算法是一样的，也包含同样的三个步骤：</p>
+<p>前向计算每个神经元的输出值；<br>反向计算每个神经元的误差项值，它是误差函数E对神经元j的加权输入的偏导数；<br>计算每个权重的梯度。<br>最后再用随机梯度下降算法更新权重。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">```python</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">```python</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://github.com/na562080">沉云</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://na562080.site/2025/07/26/deep-learning-RNN.html">https://na562080.site/2025/07/26/deep-learning-RNN.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://na562080.site" target="_blank">梦游</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-recurrent-neural-network%EF%BC%8CRNN"><span class="toc-number">1.</span> <span class="toc-text">循环神经网络(recurrent neural network，RNN)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.</span> <span class="toc-text">自回归模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-autoregressive-models%EF%BC%8CAR"><span class="toc-number">1.1.1.</span> <span class="toc-text">自回归模型(autoregressive models，AR)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E5%8F%98%E9%87%8F%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-latent-autoregressive-models"><span class="toc-number">1.1.2.</span> <span class="toc-text">隐变量自回归模型(latent autoregressive models)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.</span> <span class="toc-text">马尔可夫模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">序列模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B-1"><span class="toc-number">1.4.</span> <span class="toc-text">自回归模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B-Markov-Model"><span class="toc-number">1.5.</span> <span class="toc-text">马尔可夫模型(Markov Model)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E9%9A%90%E7%8A%B6%E6%80%81%E7%9A%84%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.6.</span> <span class="toc-text">有隐状态的循环神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.7.</span> <span class="toc-text">循环神经网络的从零开始实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%83%AD%E7%BC%96%E7%A0%81"><span class="toc-number">1.7.1.</span> <span class="toc-text">独热编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E7%AE%80%E6%B4%81%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.8.</span> <span class="toc-text">循环神经网络的简洁实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RNN"><span class="toc-number">1.9.</span> <span class="toc-text">RNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E5%90%91-RNN"><span class="toc-number">1.10.</span> <span class="toc-text">双向 RNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E5%8C%96"><span class="toc-number">1.11.</span> <span class="toc-text">向量化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.12.</span> <span class="toc-text">深度循环神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E8%AE%AD%E7%BB%83%E7%AE%97%E6%B3%95%EF%BC%9ABPTT"><span class="toc-number">1.13.</span> <span class="toc-text">循环神经网络的训练算法：BPTT</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 沉云</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">愿你的身旁，永远有幸福的魔法相伴</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  const loadMathjax = () => {
+    if (!window.MathJax) {
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          tags: 'none',
+        },
+        chtml: {
+          scale: 1.1
+        },
+        options: {
+          enableMenu: true,
+          renderActions: {
+            findScript: [10, doc => {
+              for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+                const display = !!node.type.match(/; *mode=display/)
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+                const text = document.createTextNode('')
+                node.parentNode.replaceChild(text, node)
+                math.start = {node: text, delim: '', n: 0}
+                math.end = {node: text, delim: '', n: 0}
+                doc.math.push(math)
+              }
+            }, '']
+          }
+        }
+      }
+
+      const script = document.createElement('script')
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+      script.id = 'MathJax-script'
+      script.async = true
+      document.head.appendChild(script)
+    } else {
+      MathJax.startup.document.state(0)
+      MathJax.texReset()
+      MathJax.typesetPromise()
+    }
+  }
+
+  btf.addGlobalFn('encrypt', loadMathjax, 'mathjax')
+  window.pjax ? loadMathjax() : window.addEventListener('load', loadMathjax)
+})()</script><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://dream-lime.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="9430428607" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="false"> </div><script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

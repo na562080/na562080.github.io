@@ -6,7 +6,7 @@
   <link href="https://na562080.site/atom.xml" rel="self"/>
   
   <link href="https://na562080.site/"/>
-  <updated>2025-09-05T13:36:27.000Z</updated>
+  <updated>2025-11-29T08:52:09.000Z</updated>
   <id>https://na562080.site/</id>
   
   <author>
@@ -15,6 +15,135 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python-CV</title>
+    <link href="https://na562080.site/2025/11/29/python-OpenCV.html"/>
+    <id>https://na562080.site/2025/11/29/python-OpenCV.html</id>
+    <published>2025-11-29T08:52:09.000Z</published>
+    <updated>2025-11-29T08:52:09.000Z</updated>
+    
+    
+    <summary type="html">openCV</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>numpy</title>
+    <link href="https://na562080.site/2025/11/06/python-Numpy.html"/>
+    <id>https://na562080.site/2025/11/06/python-Numpy.html</id>
+    <published>2025-11-06T08:52:09.000Z</published>
+    <updated>2025-11-06T08:52:09.000Z</updated>
+    
+    
+    <summary type="html">numpy</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>html</title>
+    <link href="https://na562080.site/2025/10/31/html.html"/>
+    <id>https://na562080.site/2025/10/31/html.html</id>
+    <published>2025-10-31T10:58:55.000Z</published>
+    <updated>2025-10-31T10:58:55.000Z</updated>
+    
+    
+    <summary type="html">html入门的基础知识</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习--图神经网咯GNN</title>
+    <link href="https://na562080.site/2025/10/05/deep-learning-GNN.html"/>
+    <id>https://na562080.site/2025/10/05/deep-learning-GNN.html</id>
+    <published>2025-10-05T08:17:35.000Z</published>
+    <updated>2025-10-05T08:17:35.000Z</updated>
+    
+    
+    <summary type="html">图神经网络</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java基础知识</title>
+    <link href="https://na562080.site/2025/10/04/java-basic.html"/>
+    <id>https://na562080.site/2025/10/04/java-basic.html</id>
+    <published>2025-10-04T02:42:20.000Z</published>
+    <updated>2025-10-04T02:42:20.000Z</updated>
+    
+    
+    <summary type="html">Java入门的基础知识</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习--优化算法</title>
+    <link href="https://na562080.site/2025/10/02/deep-learning-algorithm.html"/>
+    <id>https://na562080.site/2025/10/02/deep-learning-algorithm.html</id>
+    <published>2025-10-02T11:30:49.000Z</published>
+    <updated>2025-11-06T11:30:49.000Z</updated>
+    
+    
+    <summary type="html">优化算法</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深度学习--pytorch处理CIFAR10图像数据集</title>
+    <link href="https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html"/>
+    <id>https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html</id>
+    <published>2025-10-02T08:49:52.000Z</published>
+    <updated>2025-10-05T08:49:52.000Z</updated>
+    
+    
+    <summary type="html">CIFAR10数据集实验代码</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>Embedding--Word2Vec，未完成</title>
@@ -56,8 +185,8 @@
   
   <entry>
     <title>信息论information-theory，未完成</title>
-    <link href="https://na562080.site/2025/08/31/information-theory.html"/>
-    <id>https://na562080.site/2025/08/31/information-theory.html</id>
+    <link href="https://na562080.site/2025/08/31/knowledge-information-theory.html"/>
+    <id>https://na562080.site/2025/08/31/knowledge-information-theory.html</id>
     <published>2025-08-31T06:33:08.000Z</published>
     <updated>2025-09-18T11:44:50.701Z</updated>
     
@@ -177,14 +306,54 @@
   </entry>
   
   <entry>
-    <title>python,pytorch问题一些链接，未完成</title>
-    <link href="https://na562080.site/2025/08/11/python-pytorch.html"/>
-    <id>https://na562080.site/2025/08/11/python-pytorch.html</id>
+    <title>思考的自由</title>
+    <link href="https://na562080.site/2025/08/12/v-freetothink.html"/>
+    <id>https://na562080.site/2025/08/12/v-freetothink.html</id>
+    <published>2025-08-12T08:11:29.000Z</published>
+    <updated>2025-10-25T06:23:30.385Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>pytorch，未完成</title>
+    <link href="https://na562080.site/2025/08/11/pytorch.html"/>
+    <id>https://na562080.site/2025/08/11/pytorch.html</id>
     <published>2025-08-11T07:33:37.000Z</published>
     <updated>2025-09-18T13:36:24.000Z</updated>
     
     
-    <summary type="html">python,pytorch</summary>
+    <summary type="html">pytorch</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python，未完成</title>
+    <link href="https://na562080.site/2025/08/11/python.html"/>
+    <id>https://na562080.site/2025/08/11/python.html</id>
+    <published>2025-08-11T07:33:37.000Z</published>
+    <updated>2025-09-18T13:36:24.000Z</updated>
+    
+    
+    <summary type="html">python</summary>
     
     
     
@@ -216,10 +385,10 @@
   
   <entry>
     <title>深度学习--pytorch处理MINIST手写数字数据集</title>
-    <link href="https://na562080.site/2025/07/30/deep-learning-MINIST.html"/>
-    <id>https://na562080.site/2025/07/30/deep-learning-MINIST.html</id>
+    <link href="https://na562080.site/2025/07/30/deep-learning-Project-MNIST.html"/>
+    <id>https://na562080.site/2025/07/30/deep-learning-Project-MNIST.html</id>
     <published>2025-07-30T13:52:51.000Z</published>
-    <updated>2025-08-16T11:36:27.000Z</updated>
+    <updated>2025-10-02T11:36:27.000Z</updated>
     
     
     <summary type="html">MINIST数据集代码</summary>
@@ -230,175 +399,6 @@
     
     
     <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>机器学习--算法，初步完成</title>
-    <link href="https://na562080.site/2025/07/29/machine-learning-algorithm.html"/>
-    <id>https://na562080.site/2025/07/29/machine-learning-algorithm.html</id>
-    <published>2025-07-29T09:28:39.000Z</published>
-    <updated>2025-07-29T15:18:37.000Z</updated>
-    
-    
-    <summary type="html">KNN分类算法，决策树Decision Tree</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="机器学习" scheme="https://na562080.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--长短时记忆神经网络LSTM，半完成</title>
-    <link href="https://na562080.site/2025/07/29/deep-learning-LSTM.html"/>
-    <id>https://na562080.site/2025/07/29/deep-learning-LSTM.html</id>
-    <published>2025-07-29T01:28:55.000Z</published>
-    <updated>2025-08-05T13:36:27.000Z</updated>
-    
-    
-    <summary type="html">长短时记忆神经网络LSTM</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--注意力机制Attention Mechanism，未完成</title>
-    <link href="https://na562080.site/2025/07/28/deep-learning-Attention-Mechanism.html"/>
-    <id>https://na562080.site/2025/07/28/deep-learning-Attention-Mechanism.html</id>
-    <published>2025-07-28T08:27:05.000Z</published>
-    <updated>2025-07-28T13:36:27.000Z</updated>
-    
-    
-    <summary type="html">注意力机制</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>垃圾场</title>
-    <link href="https://na562080.site/2025/07/27/yun-link.html"/>
-    <id>https://na562080.site/2025/07/27/yun-link.html</id>
-    <published>2025-07-27T09:05:05.000Z</published>
-    <updated>2025-09-18T07:55:32.008Z</updated>
-    
-    
-    <summary type="html">堆起拾来的垃圾</summary>
-    
-    
-    
-    
-    <category term="捡垃圾" scheme="https://na562080.site/tags/%E6%8D%A1%E5%9E%83%E5%9C%BE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--循环神经网络RNN，未完成</title>
-    <link href="https://na562080.site/2025/07/26/deep-learning-RNN.html"/>
-    <id>https://na562080.site/2025/07/26/deep-learning-RNN.html</id>
-    <published>2025-07-26T12:39:53.000Z</published>
-    <updated>2025-07-29T13:36:27.000Z</updated>
-    
-    
-    <summary type="html">循环神经网络</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--卷积神经网络CNN，初步完成，细节完善度低</title>
-    <link href="https://na562080.site/2025/07/26/deep-learning-CNN.html"/>
-    <id>https://na562080.site/2025/07/26/deep-learning-CNN.html</id>
-    <published>2025-07-26T03:12:17.000Z</published>
-    <updated>2025-09-19T11:36:27.000Z</updated>
-    
-    
-    <summary type="html">卷积神经网络</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>随想</title>
-    <link href="https://na562080.site/2025/07/26/yun-windcloud.html"/>
-    <id>https://na562080.site/2025/07/26/yun-windcloud.html</id>
-    <published>2025-07-26T00:55:22.000Z</published>
-    <updated>2025-09-29T13:43:39.824Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--多层感知机MLP，初步完成</title>
-    <link href="https://na562080.site/2025/07/23/deep-learning-MLP.html"/>
-    <id>https://na562080.site/2025/07/23/deep-learning-MLP.html</id>
-    <published>2025-07-23T07:30:02.000Z</published>
-    <updated>2025-07-23T11:36:27.000Z</updated>
-    
-    
-    <summary type="html">深度学习多层感知机代码一些分析</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>忆</title>
-    <link href="https://na562080.site/2025/07/19/self-galmemory.html"/>
-    <id>https://na562080.site/2025/07/19/self-galmemory.html</id>
-    <published>2025-07-19T13:04:00.000Z</published>
-    <updated>2025-07-19T13:04:00.000Z</updated>
-    
-    
-    <summary type="html">出入需令</summary>
-    
-    
-    
     
   </entry>
   

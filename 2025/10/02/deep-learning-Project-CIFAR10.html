@@ -1,0 +1,397 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>深度学习--pytorch处理CIFAR10图像数据集 | 梦游</title><meta name="author" content="沉云"><meta name="copyright" content="沉云"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="CIFAR10数据集实验代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习--pytorch处理CIFAR10图像数据集">
+<meta property="og:url" content="https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html">
+<meta property="og:site_name" content="梦游">
+<meta property="og:description" content="CIFAR10数据集实验代码">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://na562080.site/img/avatar.webp">
+<meta property="article:published_time" content="2025-10-02T08:49:52.000Z">
+<meta property="article:modified_time" content="2025-10-05T08:49:52.000Z">
+<meta property="article:author" content="沉云">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://na562080.site/img/avatar.webp"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "深度学习--pytorch处理CIFAR10图像数据集",
+  "url": "https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html",
+  "image": "https://na562080.site/img/avatar.webp",
+  "datePublished": "2025-10-02T08:49:52.000Z",
+  "dateModified": "2025-10-05T08:49:52.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "沉云",
+      "url": "https://na562080.site/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!true && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.json","preload":true,"top_n_per_article":3,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '深度学习--pytorch处理CIFAR10图像数据集',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/modify.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="梦游" type="application/atom+xml">
+</head><body><div id="web_bg" style="background-image: url(/img/Clifftop_Walk_At_Pourville.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-thumbs-up"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 随想</span></a></li><li><a class="site-page child" href="/bookshelf/"><i class="fa-fw fas fa-book-open"></i><span> 书</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" alt="Logo"><span class="site-name">梦游</span></a><a class="nav-page-title" href="/"><span class="site-name">深度学习--pytorch处理CIFAR10图像数据集</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><span class="site-page group"><i class="fa-fw fas fa-thumbs-up"></i><span> 休闲</span><i class="fas fa-chevron-down"></i></span><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 画廊</span></a></li><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fas fa-comment-dots"></i><span> 随想</span></a></li><li><a class="site-page child" href="/bookshelf/"><i class="fa-fw fas fa-book-open"></i><span> 书</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">深度学习--pytorch处理CIFAR10图像数据集</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-10-02T08:49:52.000Z" title="发表于 2025-10-02 16:49:52">2025-10-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-10-05T08:49:52.000Z" title="更新于 2025-10-05 16:49:52">2025-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25737169/article/details/79048516">batchnorm讲解</a></p>
+</blockquote>
+<p>lr不能更新太快，第一次实验lr&#x3D;0.001，StepLR(step_size&#x3D;3, gamma&#x3D;0.1)，三层CNN，学习率衰减过快，导致最终准确率仅为18%，<strong>小心梯度消失！</strong><br>大数据集本身就是天然的数据增强，所以不那么需要做数据增强，而小数据集大模型则必须数据增强以缓解过拟合。<br>Dropout在小模型上使用可能导致性能降低，由于规模小大部分神经元都是有效的，冗余神经元少。如果真要使用Dropout，要减少抛掷神经元的比例。<br>小分辨率图像要慎重使用池化，容易丢失过多的细节。</p>
+<hr>
+<p>CIFAR-10 数据集的图像尺寸是 32×32 像素，3 个通道(RGB)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kernel size=3，padding=1，step_size=4，bitch_size=128</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第一次实验(第二次实验lr改为0.01后训练效果显著上升)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">train_model</span>(<span class="params">model,train_loader,test_loader,epochs=<span class="number">10</span></span>):</span><br><span class="line">    criterion = nn.CrossEntropyLoss()</span><br><span class="line">    <span class="comment"># model.parameters()：告诉优化器哪些参数需要更新。不是&quot;冲量&quot;，而是模型中所有可训练的权重和偏置，梯度更新的方向和幅度</span></span><br><span class="line">    optimizer = optim.SGD(model.parameters(),lr=<span class="number">0.001</span>,momentum=<span class="number">0.9</span>)</span><br><span class="line">    <span class="comment"># optimizer，优化器对象，初期快速收敛，在后期用更小的学习率微调，提高收敛精度，学习率调度器</span></span><br><span class="line">    scheduler = optim.lr_scheduler.StepLR(optimizer,step_size=<span class="number">4</span>,gamma=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(CNN,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(<span class="number">3</span>,<span class="number">9</span>,<span class="number">3</span>,padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv2 = nn.Conv2d(<span class="number">9</span>,<span class="number">27</span>,<span class="number">3</span>,padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv3 = nn.Conv2d(<span class="number">27</span>,<span class="number">81</span>,<span class="number">3</span>,padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv4 = nn.Conv2d(<span class="number">81</span>,<span class="number">81</span>,<span class="number">3</span>,padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.pool = nn.MaxPool2d(<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line">        <span class="variable language_">self</span>.fc1 = nn.Linear(in_features=<span class="number">81</span>*<span class="number">2</span>*<span class="number">2</span>,out_features=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.conv1(x)))</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.conv2(x)))</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.conv3(x)))</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.conv4(x)))</span><br><span class="line">        x=torch.flatten(x,<span class="number">1</span>)</span><br><span class="line">        x = <span class="variable language_">self</span>.fc1(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第三次实验(深度增加两层)，效果相对第二次还下降了😂</span></span><br><span class="line">        <span class="variable language_">self</span>.conv5 = nn.Conv2d(<span class="number">81</span>, <span class="number">81</span>, <span class="number">3</span>, padding=<span class="number">1</span>)  </span><br><span class="line">        <span class="variable language_">self</span>.conv6 = nn.Conv2d(<span class="number">81</span>, <span class="number">81</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        x=F.relu(<span class="variable language_">self</span>.conv5(x))</span><br><span class="line">        x=F.relu(<span class="variable language_">self</span>.conv6(x))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第四次实验(第四层不池化，降低池化次数)</span></span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.conv4(x)) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 第五次实验(增加BitchNorm)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">CNN</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>(CNN,<span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="variable language_">self</span>.pool = nn.MaxPool2d(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">16</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn1 = nn.BatchNorm2d(<span class="number">16</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv2 = nn.Conv2d(<span class="number">16</span>, <span class="number">32</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn2 = nn.BatchNorm2d(<span class="number">32</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv3 = nn.Conv2d(<span class="number">32</span>, <span class="number">64</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn3 = nn.BatchNorm2d(<span class="number">64</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv4 = nn.Conv2d(<span class="number">64</span>, <span class="number">128</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn4 = nn.BatchNorm2d(<span class="number">128</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv5 = nn.Conv2d(<span class="number">128</span>, <span class="number">128</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn5 = nn.BatchNorm2d(<span class="number">128</span>)</span><br><span class="line">        <span class="variable language_">self</span>.conv6 = nn.Conv2d(<span class="number">128</span>, <span class="number">128</span>, <span class="number">3</span>, padding=<span class="number">1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn6 = nn.BatchNorm2d(<span class="number">128</span>)</span><br><span class="line"></span><br><span class="line">        <span class="variable language_">self</span>.fc1 = nn.Linear(<span class="number">128</span> * <span class="number">4</span> * <span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        <span class="comment"># 在卷积层后接BN层</span></span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn1(<span class="variable language_">self</span>.conv1(x))))</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn2(<span class="variable language_">self</span>.conv2(x))))</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn3(<span class="variable language_">self</span>.conv3(x))))</span><br><span class="line"></span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.bn4(<span class="variable language_">self</span>.conv4(x)))</span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.bn5(<span class="variable language_">self</span>.conv5(x)))</span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.bn6(<span class="variable language_">self</span>.conv6(x)))</span><br><span class="line"></span><br><span class="line">        x = torch.flatten(x, <span class="number">1</span>)</span><br><span class="line">        x = <span class="variable language_">self</span>.fc1(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第六次实验(数据增强，更换train_data和test_data的transform)</span></span><br><span class="line">train_transform = transforms.Compose([</span><br><span class="line">    transforms.RandomCrop(<span class="number">32</span>, padding=<span class="number">4</span>),  <span class="comment"># 随机裁剪 + padding</span></span><br><span class="line">    transforms.RandomHorizontalFlip(),     <span class="comment"># 随机水平翻转</span></span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize((<span class="number">0.4914</span>, <span class="number">0.4822</span>, <span class="number">0.4465</span>),  <span class="comment"># CIFAR-10 均值</span></span><br><span class="line">                         (<span class="number">0.2023</span>, <span class="number">0.1994</span>, <span class="number">0.2010</span>))  <span class="comment"># CIFAR-10 标准差</span></span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">test_transform = transforms.Compose([</span><br><span class="line">    transforms.ToTensor(),</span><br><span class="line">    transforms.Normalize((<span class="number">0.4914</span>, <span class="number">0.4822</span>, <span class="number">0.4465</span>),</span><br><span class="line">                         (<span class="number">0.2023</span>, <span class="number">0.1994</span>, <span class="number">0.2010</span>))</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第七次实验(增加Dropout)，效果不好</span></span><br><span class="line">        <span class="variable language_">self</span>.drop1 = nn.Dropout2d(<span class="number">0.1</span>) </span><br><span class="line">        <span class="variable language_">self</span>.drop2 = nn.Dropout2d(<span class="number">0.1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.drop3 = nn.Dropout2d(<span class="number">0.1</span>)</span><br><span class="line">        <span class="variable language_">self</span>.drop_fc = nn.Dropout(<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn1(<span class="variable language_">self</span>.conv1(x))))</span><br><span class="line">        x = <span class="variable language_">self</span>.drop1(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn2(<span class="variable language_">self</span>.conv2(x))))</span><br><span class="line">        x = <span class="variable language_">self</span>.drop2(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.pool(F.relu(<span class="variable language_">self</span>.bn3(<span class="variable language_">self</span>.conv3(x))))</span><br><span class="line">        x = <span class="variable language_">self</span>.drop3(x)</span><br><span class="line"></span><br><span class="line">        x = torch.flatten(x, <span class="number">1</span>)</span><br><span class="line">        x = <span class="variable language_">self</span>.drop_fc(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.fc1(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 第八次实验(batch_size=30,step_size=6)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 第九次实验(batch_size=30,step_size=6,CNN改用ResNet18)</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">BasicBlock</span>(nn.Module): <span class="comment"># 基础残差块</span></span><br><span class="line">    expansion = <span class="number">1</span> <span class="comment"># 输出通道数 = planes * expansion</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, in_planes, planes, stride=<span class="number">1</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(BasicBlock, <span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="comment"># 由于卷积接BatchNorm，BN会抵消偏置，所以可以去掉conv的bias节省参数和略微加速</span></span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(in_planes, planes, kernel_size=<span class="number">3</span>, stride=stride,padding=<span class="number">1</span>, bias=<span class="literal">False</span>) </span><br><span class="line">        <span class="variable language_">self</span>.bn1 = nn.BatchNorm2d(planes)</span><br><span class="line">        <span class="variable language_">self</span>.conv2 = nn.Conv2d(planes, planes, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>,padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn2 = nn.BatchNorm2d(planes)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 空nn.Sequential()是恒等映射(identity)，此时shortcut(x)等于x</span></span><br><span class="line">        <span class="variable language_">self</span>.shortcut = nn.Sequential()</span><br><span class="line">        <span class="keyword">if</span> stride != <span class="number">1</span> <span class="keyword">or</span> in_planes != <span class="variable language_">self</span>.expansion * planes:</span><br><span class="line">            <span class="variable language_">self</span>.shortcut = nn.Sequential(</span><br><span class="line">                nn.Conv2d(in_planes, <span class="variable language_">self</span>.expansion * planes,</span><br><span class="line">                          kernel_size=<span class="number">1</span>, stride=stride, bias=<span class="literal">False</span>),</span><br><span class="line">                nn.BatchNorm2d(<span class="variable language_">self</span>.expansion * planes)</span><br><span class="line">            )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.bn1(<span class="variable language_">self</span>.conv1(x)))</span><br><span class="line">        x = <span class="variable language_">self</span>.bn2(<span class="variable language_">self</span>.conv2(x))</span><br><span class="line">        x += <span class="variable language_">self</span>.shortcut(x) <span class="comment"># 残差连接，如果通道或尺寸不匹配，shortcut用1×1conv做变换</span></span><br><span class="line">        x = F.relu(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ResNet</span>(nn.Module):</span><br><span class="line">    <span class="comment"># block是残差快种类，num_blocks是不同阶段残差快数量，num_classes是数据集数据种类量</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, block, num_blocks, num_classes=<span class="number">10</span></span>):</span><br><span class="line">        <span class="built_in">super</span>(ResNet, <span class="variable language_">self</span>).__init__()</span><br><span class="line">        <span class="comment"># plane等价channel，只是plane为历史沿袭的名称也常用于pytorch中</span></span><br><span class="line">        <span class="variable language_">self</span>.in_planes = <span class="number">64</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 先从RGB的3维升到64维，保持尺寸不变</span></span><br><span class="line">        <span class="variable language_">self</span>.conv1 = nn.Conv2d(<span class="number">3</span>, <span class="number">64</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>, bias=<span class="literal">False</span>)</span><br><span class="line">        <span class="variable language_">self</span>.bn1 = nn.BatchNorm2d(<span class="number">64</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 残差块分成四个阶段便于中间特征提取与可视化，_make_layer()允许快速生成不同深度的网络</span></span><br><span class="line">        <span class="variable language_">self</span>.layer1 = <span class="variable language_">self</span>._make_layer(block, <span class="number">64</span>,  num_blocks[<span class="number">0</span>], stride=<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># 使用stride=2的卷积代替池化层，卷积层自身可学习，能保留更强可表达性</span></span><br><span class="line">        <span class="variable language_">self</span>.layer2 = <span class="variable language_">self</span>._make_layer(block, <span class="number">128</span>, num_blocks[<span class="number">1</span>], stride=<span class="number">2</span>)</span><br><span class="line">        <span class="variable language_">self</span>.layer3 = <span class="variable language_">self</span>._make_layer(block, <span class="number">256</span>, num_blocks[<span class="number">2</span>], stride=<span class="number">2</span>)</span><br><span class="line">        <span class="variable language_">self</span>.layer4 = <span class="variable language_">self</span>._make_layer(block, <span class="number">512</span>, num_blocks[<span class="number">3</span>], stride=<span class="number">2</span>)</span><br><span class="line">        <span class="variable language_">self</span>.linear = nn.Linear(<span class="number">512</span> * block.expansion, num_classes)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 自动生成多个残差块，是ResNet类里自定义的私有方法</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">_make_layer</span>(<span class="params">self, block, planes, num_blocks, stride</span>): </span><br><span class="line">        strides = [stride] + [<span class="number">1</span>]*(num_blocks-<span class="number">1</span>)</span><br><span class="line">        layers = [] <span class="comment"># 用来装残差块的空列表</span></span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> strides:</span><br><span class="line">            layers.append(block(<span class="variable language_">self</span>.in_planes, planes, s)) <span class="comment"># 创建一个残差块</span></span><br><span class="line">            <span class="variable language_">self</span>.in_planes = planes * block.expansion</span><br><span class="line">        <span class="keyword">return</span> nn.Sequential(*layers)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self, x</span>):</span><br><span class="line">        x = F.relu(<span class="variable language_">self</span>.bn1(<span class="variable language_">self</span>.conv1(x)))</span><br><span class="line">        x = <span class="variable language_">self</span>.layer1(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.layer2(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.layer3(x)</span><br><span class="line">        x = <span class="variable language_">self</span>.layer4(x)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 使用F.avg_pool2d而不是nn.AvgPool2d，是出于无参数层(parameter-free)，不需要注册状态，也不会被更新，且kernel固定，省一个对象</span></span><br><span class="line">        x = F.avg_pool2d(x, <span class="number">4</span>)  <span class="comment"># Global Average Pooling</span></span><br><span class="line">        x = x.view(x.size(<span class="number">0</span>), -<span class="number">1</span>)</span><br><span class="line">        x = <span class="variable language_">self</span>.linear(x)</span><br><span class="line">        <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ResNet18</span>():</span><br><span class="line">    <span class="comment"># 每个阶段包含的 BasicBlock 个数，1+2*4*2+1=18层，所以叫ResNet18</span></span><br><span class="line">    <span class="keyword">return</span> ResNet(BasicBlock, [<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>]) <span class="comment"># return参数参考def __init__里的参数，和括号无关</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>仅供参考的Resnet18图，本人模型与其出入较大<br><img src= "/img/loading.gif" data-lazy-src="https://pic1.zhimg.com/v2-15cffb5b081c12f37e9d83ed39f614b2_1440w.jpg" alt="Resnet18"></p>
+<hr>
+<table>
+<thead>
+<tr>
+<th>实验次数</th>
+<th>模型结构(通道量前，后，最后张量尺寸)</th>
+<th>优化器&amp;学习率</th>
+<th>批大小</th>
+<th>训练轮数</th>
+<th>训练准确率</th>
+<th>测试准确率</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>4层CNN(3,81,2)</td>
+<td>SGD(lr&#x3D;0.001,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>23.08%</td>
+<td>23.31%</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4层CNN(3,81,2)</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>20</td>
+<td>74.15%</td>
+<td>66.15%</td>
+</tr>
+<tr>
+<td>3</td>
+<td>6层CNN(3,81,2)</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>51.19%</td>
+<td>52.11%</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6层CNN(3,81,4)</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>58.59%</td>
+<td>58.72%</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6层CNN(3,81,4)+BN</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>99.60%</td>
+<td>77.63%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>6层CNN(3,81,4)+BN</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>80.24%</td>
+<td>79.45%</td>
+</tr>
+<tr>
+<td>7</td>
+<td>6层CNN(3,81,4)+BN+Dropout</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>10</td>
+<td>67.78%</td>
+<td>73.05%</td>
+</tr>
+<tr>
+<td>8</td>
+<td>6层CNN(3,81,4)+BN</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>30</td>
+<td>86.85%</td>
+<td>82.76%</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ResNet18</td>
+<td>SGD(lr&#x3D;0.01,momentum&#x3D;0.9)</td>
+<td>128</td>
+<td>30</td>
+<td>98.02%</td>
+<td>90.87%</td>
+</tr>
+<tr>
+<td>10</td>
+<td></td>
+<td></td>
+<td>128</td>
+<td>10</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://na562080.site">沉云</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html">https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://na562080.site" target="_blank">梦游</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="waline-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.webp" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">沉云</div><div class="author-info-description">睡着了也困</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">37</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" href="mailto:yunaflow@outlook.com"><i class="fas fa-envelope"></i><span>邮件</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">云沉梦轻、梦落池深</div></div><div class="sticky_layout"></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"><div class="copyright">&copy;2025 By 沉云</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.3.5</a></div><div class="footer_custom_text">愿你的身旁，永远有幸福的魔法相伴</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"><script>(() => {
+  let initFn = window.walineFn || null
+  const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+  const option = null
+
+  const destroyWaline = ele => ele.destroy()
+
+  const initWaline = (Fn, el = document, path = window.location.pathname) => {
+    const waline = Fn({
+      el: el.querySelector('#waline-wrap'),
+      serverURL: 'https://dream-lime.vercel.app',
+      pageview: false,
+      dark: 'html[data-theme="dark"]',
+      comment: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || path
+    })
+
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyWaline = () => {
+        destroyWaline(waline)
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+  }
+
+  const loadWaline = (el, path) => {
+    if (initFn) initWaline(initFn, el, path)
+    else {
+      btf.getCSS('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.css')
+        .then(() => import('https://cdn.jsdelivr.net/npm/@waline/client/dist/waline.min.js'))
+        .then(({ init }) => {
+          initFn = init || Waline.init
+          initWaline(initFn, el, path)
+          window.walineFn = initFn
+        })
+    }
+  }
+
+  if (isShuoshuo) {
+    'Waline' === 'Waline'
+      ? window.shuoshuoComment = { loadComment: loadWaline } 
+      : window.loadOtherComment = loadWaline
+    return
+  }
+
+  if ('Waline' === 'Waline' || !true) {
+    if (true) btf.loadComment(document.getElementById('waline-wrap'),loadWaline)
+    else setTimeout(loadWaline, 0)
+  } else {
+    window.loadOtherComment = loadWaline
+  }
+})()</script></div><div class="aplayer no-destroy" data-id="9430428607" data-server="tencent" data-type="playlist" data-fixed="true" data-autoplay="false"> </div><script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@latest/dist/sweetalert2.all.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script>(() => {
+  const destroyAplayer = () => {
+    if (window.aplayers) {
+      for (let i = 0; i < window.aplayers.length; i++) {
+        if (!window.aplayers[i].options.fixed) {
+          window.aplayers[i].destroy()
+        }
+      }
+    }
+  }
+
+  const runMetingJS = () => {
+    typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+  }
+
+  btf.addGlobalFn('pjaxSend', destroyAplayer, 'destroyAplayer')
+  btf.addGlobalFn('pjaxComplete', loadMeting, 'runMetingJS')
+})()</script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>(() => {
+  const pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show","#web_bg",".js-pjax"]
+
+  window.pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: pjaxSelectors,
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+  })
+
+  const triggerPjaxFn = (val) => {
+    if (!val) return
+    Object.values(val).forEach(fn => fn())
+  }
+
+  document.addEventListener('pjax:send', () => {
+    // removeEventListener
+    btf.removeGlobalFnEvent('pjaxSendOnce')
+    btf.removeGlobalFnEvent('themeChange')
+
+    // reset readmode
+    const $bodyClassList = document.body.classList
+    if ($bodyClassList.contains('read-mode')) $bodyClassList.remove('read-mode')
+
+    triggerPjaxFn(window.globalFn.pjaxSend)
+  })
+
+  document.addEventListener('pjax:complete', () => {
+    btf.removeGlobalFnEvent('pjaxCompleteOnce')
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+      const newScript = document.createElement('script')
+      const content = item.text || item.textContent || item.innerHTML || ""
+      Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+      newScript.appendChild(document.createTextNode(content))
+      item.parentNode.replaceChild(newScript, item)
+    })
+
+    triggerPjaxFn(window.globalFn.pjaxComplete)
+  })
+
+  document.addEventListener('pjax:error', e => {
+    if (e.request.status === 404) {
+      const usePjax = true
+      false 
+        ? (usePjax ? pjax.loadUrl('/404.html') : window.location.href = '/404.html')
+        : window.location.href = e.request.responseURL
+    }
+  })
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

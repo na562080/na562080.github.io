@@ -6,7 +6,7 @@
   <link href="https://na562080.site/atom.xml" rel="self"/>
   
   <link href="https://na562080.site/"/>
-  <updated>2025-11-29T08:52:09.000Z</updated>
+  <updated>2025-12-13T13:38:27.070Z</updated>
   <id>https://na562080.site/</id>
   
   <author>
@@ -15,6 +15,40 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>html-Vue</title>
+    <link href="https://na562080.site/2025/12/12/html-Vue.html"/>
+    <id>https://na562080.site/2025/12/12/html-Vue.html</id>
+    <published>2025-12-12T12:18:27.000Z</published>
+    <updated>2025-12-13T13:38:27.070Z</updated>
+    
+    
+    <summary type="html">Vue</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Pandas</title>
+    <link href="https://na562080.site/2025/12/04/python-Pandas.html"/>
+    <id>https://na562080.site/2025/12/04/python-Pandas.html</id>
+    <published>2025-12-04T12:39:29.000Z</published>
+    <updated>2025-12-04T12:39:29.000Z</updated>
+    
+    
+    <summary type="html">Pandas</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python-CV</title>
@@ -95,7 +129,7 @@
     <link href="https://na562080.site/2025/10/04/java-basic.html"/>
     <id>https://na562080.site/2025/10/04/java-basic.html</id>
     <published>2025-10-04T02:42:20.000Z</published>
-    <updated>2025-10-04T02:42:20.000Z</updated>
+    <updated>2025-12-02T07:52:36.000Z</updated>
     
     
     <summary type="html">Java入门的基础知识</summary>
@@ -291,7 +325,7 @@
     <link href="https://na562080.site/2025/08/20/c-dijkstra.html"/>
     <id>https://na562080.site/2025/08/20/c-dijkstra.html</id>
     <published>2025-08-20T12:35:01.000Z</published>
-    <updated>2025-10-01T12:00:01.368Z</updated>
+    <updated>2025-12-11T09:05:49.954Z</updated>
     
     
     <summary type="html">C++ dijkstra算法</summary>
@@ -306,11 +340,11 @@
   </entry>
   
   <entry>
-    <title>思考的自由</title>
-    <link href="https://na562080.site/2025/08/12/v-freetothink.html"/>
-    <id>https://na562080.site/2025/08/12/v-freetothink.html</id>
-    <published>2025-08-12T08:11:29.000Z</published>
-    <updated>2025-10-25T06:23:30.385Z</updated>
+    <title>news，弃坑，已经不看新闻了</title>
+    <link href="https://na562080.site/2025/08/14/v-aboutnews.html"/>
+    <id>https://na562080.site/2025/08/14/v-aboutnews.html</id>
+    <published>2025-08-14T08:14:58.000Z</published>
+    <updated>2025-12-14T06:21:20.143Z</updated>
     
     
       
@@ -327,30 +361,32 @@
   </entry>
   
   <entry>
-    <title>pytorch，未完成</title>
-    <link href="https://na562080.site/2025/08/11/pytorch.html"/>
-    <id>https://na562080.site/2025/08/11/pytorch.html</id>
-    <published>2025-08-11T07:33:37.000Z</published>
-    <updated>2025-09-18T13:36:24.000Z</updated>
+    <title>思考的自由，弃坑</title>
+    <link href="https://na562080.site/2025/08/12/v-freetothink.html"/>
+    <id>https://na562080.site/2025/08/12/v-freetothink.html</id>
+    <published>2025-08-12T08:11:29.000Z</published>
+    <updated>2025-12-14T06:21:12.840Z</updated>
     
     
-    <summary type="html">pytorch</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
     
   </entry>
   
   <entry>
-    <title>python，未完成</title>
+    <title>python</title>
     <link href="https://na562080.site/2025/08/11/python.html"/>
     <id>https://na562080.site/2025/08/11/python.html</id>
     <published>2025-08-11T07:33:37.000Z</published>
-    <updated>2025-09-18T13:36:24.000Z</updated>
+    <updated>2025-12-04T13:36:24.000Z</updated>
     
     
     <summary type="html">python</summary>
@@ -361,44 +397,6 @@
     
     
     <category term="python" scheme="https://na562080.site/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--Transformer，半完成</title>
-    <link href="https://na562080.site/2025/08/05/deep-learning-Transformer.html"/>
-    <id>https://na562080.site/2025/08/05/deep-learning-Transformer.html</id>
-    <published>2025-08-05T08:50:32.000Z</published>
-    <updated>2025-08-05T13:36:27.000Z</updated>
-    
-    
-    <summary type="html">Transformer</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习--pytorch处理MINIST手写数字数据集</title>
-    <link href="https://na562080.site/2025/07/30/deep-learning-Project-MNIST.html"/>
-    <id>https://na562080.site/2025/07/30/deep-learning-Project-MNIST.html</id>
-    <published>2025-07-30T13:52:51.000Z</published>
-    <updated>2025-10-02T11:36:27.000Z</updated>
-    
-    
-    <summary type="html">MINIST数据集代码</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://na562080.site/atom.xml" rel="self"/>
   
   <link href="https://na562080.site/"/>
-  <updated>2025-12-13T13:38:27.070Z</updated>
+  <updated>2025-12-15T12:31:04.000Z</updated>
   <id>https://na562080.site/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>matplotlib-pyplot</title>
+    <link href="https://na562080.site/2025/12/15/python-Matplotlib-pyplot.html"/>
+    <id>https://na562080.site/2025/12/15/python-Matplotlib-pyplot.html</id>
+    <published>2025-12-15T12:31:04.000Z</published>
+    <updated>2025-12-15T12:31:04.000Z</updated>
+    
+    
+    <summary type="html">python的Matplotlib.pyplot库</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Requests</title>
+    <link href="https://na562080.site/2025/12/14/python-Requests.html"/>
+    <id>https://na562080.site/2025/12/14/python-Requests.html</id>
+    <published>2025-12-14T07:03:39.000Z</published>
+    <updated>2025-12-14T12:39:29.000Z</updated>
+    
+    
+    <summary type="html">python的Requests库</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>html-Vue</title>
@@ -36,10 +74,10 @@
     <link href="https://na562080.site/2025/12/04/python-Pandas.html"/>
     <id>https://na562080.site/2025/12/04/python-Pandas.html</id>
     <published>2025-12-04T12:39:29.000Z</published>
-    <updated>2025-12-04T12:39:29.000Z</updated>
+    <updated>2025-12-14T12:39:29.000Z</updated>
     
     
-    <summary type="html">Pandas</summary>
+    <summary type="html">python的Pandas库</summary>
     
     
     
@@ -51,14 +89,14 @@
   </entry>
   
   <entry>
-    <title>python-CV</title>
+    <title>OpenCV</title>
     <link href="https://na562080.site/2025/11/29/python-OpenCV.html"/>
     <id>https://na562080.site/2025/11/29/python-OpenCV.html</id>
     <published>2025-11-29T08:52:09.000Z</published>
-    <updated>2025-11-29T08:52:09.000Z</updated>
+    <updated>2025-12-14T08:52:09.000Z</updated>
     
     
-    <summary type="html">openCV</summary>
+    <summary type="html">python的OpenCV库</summary>
     
     
     
@@ -70,14 +108,14 @@
   </entry>
   
   <entry>
-    <title>numpy</title>
+    <title>Numpy</title>
     <link href="https://na562080.site/2025/11/06/python-Numpy.html"/>
     <id>https://na562080.site/2025/11/06/python-Numpy.html</id>
     <published>2025-11-06T08:52:09.000Z</published>
-    <updated>2025-11-06T08:52:09.000Z</updated>
+    <updated>2025-12-14T08:52:09.000Z</updated>
     
     
-    <summary type="html">numpy</summary>
+    <summary type="html">python的Numpy库</summary>
     
     
     
@@ -344,7 +382,7 @@
     <link href="https://na562080.site/2025/08/14/v-aboutnews.html"/>
     <id>https://na562080.site/2025/08/14/v-aboutnews.html</id>
     <published>2025-08-14T08:14:58.000Z</published>
-    <updated>2025-12-14T06:21:20.143Z</updated>
+    <updated>2025-12-20T08:14:11.692Z</updated>
     
     
       
@@ -357,46 +395,8 @@
     
     
     
+    <category term="文章" scheme="https://na562080.site/categories/%E6%96%87%E7%AB%A0/"/>
     
-  </entry>
-  
-  <entry>
-    <title>思考的自由，弃坑</title>
-    <link href="https://na562080.site/2025/08/12/v-freetothink.html"/>
-    <id>https://na562080.site/2025/08/12/v-freetothink.html</id>
-    <published>2025-08-12T08:11:29.000Z</published>
-    <updated>2025-12-14T06:21:12.840Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>python</title>
-    <link href="https://na562080.site/2025/08/11/python.html"/>
-    <id>https://na562080.site/2025/08/11/python.html</id>
-    <published>2025-08-11T07:33:37.000Z</published>
-    <updated>2025-12-04T13:36:24.000Z</updated>
-    
-    
-    <summary type="html">python</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="https://na562080.site/atom.xml" rel="self"/>
   
   <link href="https://na562080.site/"/>
-  <updated>2025-12-20T11:46:27.000Z</updated>
+  <updated>2026-01-26T06:57:39.489Z</updated>
   <id>https://na562080.site/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>thinking2026</title>
+    <link href="https://na562080.site/2026/01/26/yun-windcloud-2026.html"/>
+    <id>https://na562080.site/2026/01/26/yun-windcloud-2026.html</id>
+    <published>2026-01-26T06:12:34.000Z</published>
+    <updated>2026-01-26T06:57:39.489Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>html-jquery</title>
+    <link href="https://na562080.site/2026/01/04/html-jquery.html"/>
+    <id>https://na562080.site/2026/01/04/html-jquery.html</id>
+    <published>2026-01-04T10:48:48.000Z</published>
+    <updated>2026-01-04T10:48:48.000Z</updated>
+    
+    
+    <summary type="html">jquery</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Scipy</title>
@@ -78,12 +118,14 @@
     <link href="https://na562080.site/2025/12/12/html-Vue.html"/>
     <id>https://na562080.site/2025/12/12/html-Vue.html</id>
     <published>2025-12-12T12:18:27.000Z</published>
-    <updated>2025-12-13T13:38:27.070Z</updated>
+    <updated>2026-01-04T10:48:48.000Z</updated>
     
     
     <summary type="html">Vue</summary>
     
     
+    
+    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
@@ -150,7 +192,7 @@
     <link href="https://na562080.site/2025/10/31/html.html"/>
     <id>https://na562080.site/2025/10/31/html.html</id>
     <published>2025-10-31T10:58:55.000Z</published>
-    <updated>2025-10-31T10:58:55.000Z</updated>
+    <updated>2026-01-04T10:48:48.000Z</updated>
     
     
     <summary type="html">html入门的基础知识</summary>
@@ -355,44 +397,6 @@
     
     <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>deque解滑动窗口极值问题</title>
-    <link href="https://na562080.site/2025/08/27/c-deque.html"/>
-    <id>https://na562080.site/2025/08/27/c-deque.html</id>
-    <published>2025-08-27T13:33:15.000Z</published>
-    <updated>2025-10-01T12:00:15.185Z</updated>
-    
-    
-    <summary type="html">C++ deque容器</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="cpp" scheme="https://na562080.site/tags/cpp/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C-dijkstra</title>
-    <link href="https://na562080.site/2025/08/20/c-dijkstra.html"/>
-    <id>https://na562080.site/2025/08/20/c-dijkstra.html</id>
-    <published>2025-08-20T12:35:01.000Z</published>
-    <updated>2025-12-11T09:05:49.954Z</updated>
-    
-    
-    <summary type="html">C++ dijkstra算法</summary>
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="cpp" scheme="https://na562080.site/tags/cpp/"/>
     
   </entry>
   

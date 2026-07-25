@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>梦游</title>
-  <icon>https://na562080.site/img/avatar.webp</icon>
+  <icon>https://na562080.github.io/img/avatar.webp</icon>
   
-  <link href="https://na562080.site/atom.xml" rel="self"/>
+  <link href="https://na562080.github.io/atom.xml" rel="self"/>
   
-  <link href="https://na562080.site/"/>
-  <updated>2026-02-06T03:45:44.711Z</updated>
-  <id>https://na562080.site/</id>
+  <link href="https://na562080.github.io/"/>
+  <updated>2026-02-10T03:15:18.000Z</updated>
+  <id>https://na562080.github.io/</id>
   
   <author>
     <name>沉云</name>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>深度学习--BERT</title>
+    <link href="https://na562080.github.io/2026/02/10/deep-learning-BERT.html"/>
+    <id>https://na562080.github.io/2026/02/10/deep-learning-BERT.html</id>
+    <published>2026-02-10T03:15:18.000Z</published>
+    <updated>2026-02-10T03:15:18.000Z</updated>
+    
+    
+    <summary type="html">BERT</summary>
+    
+    
+    
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>thinking2026</title>
-    <link href="https://na562080.site/2026/01/26/yun-windcloud-2026.html"/>
-    <id>https://na562080.site/2026/01/26/yun-windcloud-2026.html</id>
+    <link href="https://na562080.github.io/2026/01/26/yun-windcloud-2026.html"/>
+    <id>https://na562080.github.io/2026/01/26/yun-windcloud-2026.html</id>
     <published>2026-01-26T06:12:34.000Z</published>
-    <updated>2026-02-06T03:45:44.711Z</updated>
+    <updated>2026-04-24T13:53:44.528Z</updated>
     
     
       
@@ -34,15 +53,15 @@
     
     
     
-    <category term="杂谈" scheme="https://na562080.site/categories/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://na562080.github.io/categories/%E6%9D%82%E8%B0%88/"/>
     
     
   </entry>
   
   <entry>
     <title>html-jquery</title>
-    <link href="https://na562080.site/2026/01/04/html-jquery.html"/>
-    <id>https://na562080.site/2026/01/04/html-jquery.html</id>
+    <link href="https://na562080.github.io/2026/01/04/html-jquery.html"/>
+    <id>https://na562080.github.io/2026/01/04/html-jquery.html</id>
     <published>2026-01-04T10:48:48.000Z</published>
     <updated>2026-01-04T10:48:48.000Z</updated>
     
@@ -51,15 +70,15 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>Scipy</title>
-    <link href="https://na562080.site/2025/12/20/python-Scipy.html"/>
-    <id>https://na562080.site/2025/12/20/python-Scipy.html</id>
+    <link href="https://na562080.github.io/2025/12/20/python-Scipy.html"/>
+    <id>https://na562080.github.io/2025/12/20/python-Scipy.html</id>
     <published>2025-12-20T11:46:27.000Z</published>
     <updated>2025-12-20T11:46:27.000Z</updated>
     
@@ -68,17 +87,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>matplotlib-pyplot</title>
-    <link href="https://na562080.site/2025/12/15/python-Matplotlib-pyplot.html"/>
-    <id>https://na562080.site/2025/12/15/python-Matplotlib-pyplot.html</id>
+    <link href="https://na562080.github.io/2025/12/15/python-Matplotlib-pyplot.html"/>
+    <id>https://na562080.github.io/2025/12/15/python-Matplotlib-pyplot.html</id>
     <published>2025-12-15T12:31:04.000Z</published>
     <updated>2025-12-15T12:31:04.000Z</updated>
     
@@ -87,17 +106,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Requests</title>
-    <link href="https://na562080.site/2025/12/14/python-Requests.html"/>
-    <id>https://na562080.site/2025/12/14/python-Requests.html</id>
+    <link href="https://na562080.github.io/2025/12/14/python-Requests.html"/>
+    <id>https://na562080.github.io/2025/12/14/python-Requests.html</id>
     <published>2025-12-14T07:03:39.000Z</published>
     <updated>2025-12-14T12:39:29.000Z</updated>
     
@@ -106,17 +125,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>html-Vue</title>
-    <link href="https://na562080.site/2025/12/12/html-Vue.html"/>
-    <id>https://na562080.site/2025/12/12/html-Vue.html</id>
+    <link href="https://na562080.github.io/2025/12/12/html-Vue.html"/>
+    <id>https://na562080.github.io/2025/12/12/html-Vue.html</id>
     <published>2025-12-12T12:18:27.000Z</published>
     <updated>2026-01-04T10:48:48.000Z</updated>
     
@@ -125,15 +144,15 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>Pandas</title>
-    <link href="https://na562080.site/2025/12/04/python-Pandas.html"/>
-    <id>https://na562080.site/2025/12/04/python-Pandas.html</id>
+    <link href="https://na562080.github.io/2025/12/04/python-Pandas.html"/>
+    <id>https://na562080.github.io/2025/12/04/python-Pandas.html</id>
     <published>2025-12-04T12:39:29.000Z</published>
     <updated>2025-12-14T12:39:29.000Z</updated>
     
@@ -142,17 +161,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>OpenCV</title>
-    <link href="https://na562080.site/2025/11/29/python-OpenCV.html"/>
-    <id>https://na562080.site/2025/11/29/python-OpenCV.html</id>
+    <link href="https://na562080.github.io/2025/11/29/python-OpenCV.html"/>
+    <id>https://na562080.github.io/2025/11/29/python-OpenCV.html</id>
     <published>2025-11-29T08:52:09.000Z</published>
     <updated>2025-12-14T08:52:09.000Z</updated>
     
@@ -161,17 +180,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Numpy</title>
-    <link href="https://na562080.site/2025/11/06/python-Numpy.html"/>
-    <id>https://na562080.site/2025/11/06/python-Numpy.html</id>
+    <link href="https://na562080.github.io/2025/11/06/python-Numpy.html"/>
+    <id>https://na562080.github.io/2025/11/06/python-Numpy.html</id>
     <published>2025-11-06T08:52:09.000Z</published>
     <updated>2025-12-14T08:52:09.000Z</updated>
     
@@ -180,17 +199,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="python" scheme="https://na562080.site/tags/python/"/>
+    <category term="python" scheme="https://na562080.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>html</title>
-    <link href="https://na562080.site/2025/10/31/html.html"/>
-    <id>https://na562080.site/2025/10/31/html.html</id>
+    <link href="https://na562080.github.io/2025/10/31/html.html"/>
+    <id>https://na562080.github.io/2025/10/31/html.html</id>
     <published>2025-10-31T10:58:55.000Z</published>
     <updated>2026-01-04T10:48:48.000Z</updated>
     
@@ -199,15 +218,15 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>深度学习--图神经网咯GNN</title>
-    <link href="https://na562080.site/2025/10/05/deep-learning-GNN.html"/>
-    <id>https://na562080.site/2025/10/05/deep-learning-GNN.html</id>
+    <link href="https://na562080.github.io/2025/10/05/deep-learning-GNN.html"/>
+    <id>https://na562080.github.io/2025/10/05/deep-learning-GNN.html</id>
     <published>2025-10-05T08:17:35.000Z</published>
     <updated>2025-10-05T08:17:35.000Z</updated>
     
@@ -216,17 +235,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Java基础知识</title>
-    <link href="https://na562080.site/2025/10/04/java-basic.html"/>
-    <id>https://na562080.site/2025/10/04/java-basic.html</id>
+    <link href="https://na562080.github.io/2025/10/04/java-basic.html"/>
+    <id>https://na562080.github.io/2025/10/04/java-basic.html</id>
     <published>2025-10-04T02:42:20.000Z</published>
     <updated>2025-12-02T07:52:36.000Z</updated>
     
@@ -235,15 +254,15 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>深度学习--优化算法</title>
-    <link href="https://na562080.site/2025/10/02/deep-learning-algorithm.html"/>
-    <id>https://na562080.site/2025/10/02/deep-learning-algorithm.html</id>
+    <link href="https://na562080.github.io/2025/10/02/deep-learning-algorithm.html"/>
+    <id>https://na562080.github.io/2025/10/02/deep-learning-algorithm.html</id>
     <published>2025-10-02T11:30:49.000Z</published>
     <updated>2025-11-06T11:30:49.000Z</updated>
     
@@ -252,17 +271,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>深度学习--pytorch处理CIFAR10图像数据集</title>
-    <link href="https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html"/>
-    <id>https://na562080.site/2025/10/02/deep-learning-Project-CIFAR10.html</id>
+    <link href="https://na562080.github.io/2025/10/02/deep-learning-Project-CIFAR10.html"/>
+    <id>https://na562080.github.io/2025/10/02/deep-learning-Project-CIFAR10.html</id>
     <published>2025-10-02T08:49:52.000Z</published>
     <updated>2025-10-05T08:49:52.000Z</updated>
     
@@ -271,17 +290,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>Embedding--Word2Vec，未完成</title>
-    <link href="https://na562080.site/2025/09/04/deep-learning-Word2Vec.html"/>
-    <id>https://na562080.site/2025/09/04/deep-learning-Word2Vec.html</id>
+    <link href="https://na562080.github.io/2025/09/04/deep-learning-Word2Vec.html"/>
+    <id>https://na562080.github.io/2025/09/04/deep-learning-Word2Vec.html</id>
     <published>2025-09-04T01:32:18.000Z</published>
     <updated>2025-09-05T13:36:27.000Z</updated>
     
@@ -290,17 +309,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>强化学习，未完成</title>
-    <link href="https://na562080.site/2025/08/31/reinforcement-learning.html"/>
-    <id>https://na562080.site/2025/08/31/reinforcement-learning.html</id>
+    <link href="https://na562080.github.io/2025/08/31/reinforcement-learning.html"/>
+    <id>https://na562080.github.io/2025/08/31/reinforcement-learning.html</id>
     <published>2025-08-31T06:33:36.000Z</published>
     <updated>2025-09-18T11:42:38.170Z</updated>
     
@@ -309,17 +328,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>信息论information-theory，未完成</title>
-    <link href="https://na562080.site/2025/08/31/knowledge-information-theory.html"/>
-    <id>https://na562080.site/2025/08/31/knowledge-information-theory.html</id>
+    <link href="https://na562080.github.io/2025/08/31/knowledge-information-theory.html"/>
+    <id>https://na562080.github.io/2025/08/31/knowledge-information-theory.html</id>
     <published>2025-08-31T06:33:08.000Z</published>
     <updated>2025-09-18T11:44:50.701Z</updated>
     
@@ -328,15 +347,15 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>机器学习--支撑向量机SVM，未完成</title>
-    <link href="https://na562080.site/2025/08/30/machine-learning-SVM.html"/>
-    <id>https://na562080.site/2025/08/30/machine-learning-SVM.html</id>
+    <link href="https://na562080.github.io/2025/08/30/machine-learning-SVM.html"/>
+    <id>https://na562080.github.io/2025/08/30/machine-learning-SVM.html</id>
     <published>2025-08-30T02:32:26.000Z</published>
     <updated>2025-08-30T13:36:27.000Z</updated>
     
@@ -345,17 +364,17 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="机器学习" scheme="https://na562080.site/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="机器学习" scheme="https://na562080.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
   <entry>
     <title>深度学习一些问题探讨，未开工</title>
-    <link href="https://na562080.site/2025/08/29/deep-learning-link.html"/>
-    <id>https://na562080.site/2025/08/29/deep-learning-link.html</id>
+    <link href="https://na562080.github.io/2025/08/29/deep-learning-link.html"/>
+    <id>https://na562080.github.io/2025/08/29/deep-learning-link.html</id>
     <published>2025-08-29T11:28:21.000Z</published>
     <updated>2025-09-18T11:46:25.369Z</updated>
     
@@ -370,33 +389,10 @@
     
     
     
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
+    <category term="学习" scheme="https://na562080.github.io/categories/%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="深度学习" scheme="https://na562080.site/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>有关编程的链接，入门用</title>
-    <link href="https://na562080.site/2025/08/29/code-link.html"/>
-    <id>https://na562080.site/2025/08/29/code-link.html</id>
-    <published>2025-08-29T08:42:05.000Z</published>
-    <updated>2025-09-18T11:31:42.837Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="学习" scheme="https://na562080.site/categories/%E5%AD%A6%E4%B9%A0/"/>
-    
+    <category term="深度学习" scheme="https://na562080.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
